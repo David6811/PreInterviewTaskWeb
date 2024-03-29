@@ -1,5 +1,6 @@
 import Banner from "./components/Banner";
 import CarDetails from "./components/CarDetails";
+import LoadMore from "./components/LoadMore";
 
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div>
       <Banner />
       <CarDetails />
+      <LoadMore />
     </div>
   );
 }

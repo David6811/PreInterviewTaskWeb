@@ -2,7 +2,7 @@ import './CarDetails.css'; // Import the CSS file
 
 export default function CarDetails() {
     return (
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center carDetailContainor">
             <div></div>
             <div className="flex items-left h-full">
                 <table>
