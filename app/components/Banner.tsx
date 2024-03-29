@@ -1,5 +1,6 @@
 import './Banner.css'; // Import the CSS file
 import Menu from './Menu';
+import UsedCarTitle from './UsedCarTitle';
 
 export default function Banner() {
   return (
@@ -7,6 +8,7 @@ export default function Banner() {
       <div></div>
       <div id="pageHead" className="flex items-left h-full midBody">
         <Menu />
+        <UsedCarTitle />
       </div>
       <div></div>
     </div>
