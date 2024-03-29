@@ -1,0 +1,15 @@
+.borderGray{
+    border:1px solid #777;
+}
+
+.banner {
+    color: white;
+    height: 560px;
+    background-color: #051c2c; /* Use background-color instead of backgroundColor */
+}
+
+.midBody {
+    flex-direction: column;
+    width: 960px;
+    margin:0px 25px;
+}

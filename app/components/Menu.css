@@ -1,0 +1,40 @@
+.menus {
+    color: rgba(255, 255, 255, 0.38);
+    font-size: 18px;
+    font-weight: 300
+}
+
+.menus * {
+    cursor: pointer;
+  }
+
+.list-xl {
+    display: none;
+}
+
+/* 960 730 560 xl lg mid sm*/
+@media (max-width:960px) {
+    .mt-960 {
+        @apply mt-0;
+    }
+
+    /* hidden menu and showlist */
+    .menus-960 {
+        display: none;
+    }
+
+    .log-960 {
+        height: 25px;
+        width: 148px;
+    }
+
+    .list-960 {
+        display: block;
+    }
+
+    .min-960 {
+        @apply sm:min-w-[80px] sm:min-h-[42px];
+    }
+
+
+}
