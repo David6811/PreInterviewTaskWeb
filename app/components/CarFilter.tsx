@@ -35,10 +35,12 @@ export default function CarFilter() {
 
 
                     <div className='carInnerContainner'>
-                        <div className='grid grid-rows-2 flex justify-between items-center mt-8 carFilterButtons'>
-                            <div className='flex justify-between items-center '>
-                                <a className='showMoreLink'>Show more filters</a>
+                        <div className='grid grid-cols-1 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-1 mt-3'>
+                            <div className='mt-1'>
+                                <a className='flex justify-center showMoreLink'>Show more filters</a>
                             </div>
+                            <div></div>
+                            <div></div>
                             <div className='flex justify-between items-center gap-3'>
                                 <button className='applyButton'>Apply</button>
                                 <button className='clearButton'>Clear</button>
