@@ -22,9 +22,8 @@
 }
 
 .descriptionInput {
-    margin-top: 3px;
     width: 460px;
-    height: 36px;
+    height: 32px;
     border-radius: 25px;
     color: black;
     font-size: 14px;
@@ -87,6 +86,18 @@
     /* background-color: rgba(0, 0, 0, 0); */
     background-color: #737d84;
 }
+
+.flex1{
+    flex: 1;
+}
+
+@media (max-width: 560px) {
+    .showMore560 {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 
 /* *{
     border: 1px solid white;

@@ -1,5 +1,5 @@
 'use client'
-import './SortButton.css'; // Import the CSS file
+import './SortButton.css';
 
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
@@ -26,7 +26,7 @@ export default function SortButton() {
   return (
     <Listbox value={selected} onChange={setSelected} >
       <>
-      <div className="relative selectorContainor">
+      <div className="relative selectorContainor_Sort">
           <Listbox.Button className="relative w-full bg-white py-1 pl-3 pr-10 text-left text-gray-900 listboxButton_Sort " style={{height:'50px'}}>
             <span className="flex items-center">
               <span className="ml-3 block truncate">{selected.name}</span>
@@ -37,13 +37,13 @@ export default function SortButton() {
           </Listbox.Button>
 
           <Transition>
-            <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm options">
+            <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm options_Sort">
               {data.map((person) => (
                 <Listbox.Option
                   key={person.id}
                   className={({ active }) =>
                     classNames(
-                      active ? 'optionText  text-gray-900' : 'text-gray-900', //bg-indigo-600
+                      active ? 'optionText_Sort  text-gray-900' : 'text-gray-900', //bg-indigo-600
                       'relative cursor-default select-none py-2 pl-3 pr-9'
                     )
                   }
