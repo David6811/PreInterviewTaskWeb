@@ -5,40 +5,31 @@ import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon, ChevronDownIcon, PlayIcon} from '@heroicons/react/20/solid'
 
-const data = [
-  {
-    id: 1,
-    name: 'Audi',
-  },
-  {
-    id: 2,
-    name: 'Arlene Mccoy',
-  },
-  {
-    id: 3,
-    name: 'Devon Webb',
-  },
-  {
-    id: 4,
-    name: 'Tom Cook',
-  },
-  {
-    id: 5,
-    name: 'Tanya Fox',
-  },
-]
+
+interface Factors {
+  id: number;
+  name: string;
+}
+
+interface CarSelectorProps {
+  jsonData: Factors[]; 
+  defaultWidth: number;
+}
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function CarSelector() {
-  const [selected, setSelected] = useState(data[3])
+export default function CarSelector({ jsonData, defaultWidth }: CarSelectorProps) {
+  const [selected, setSelected] = useState(jsonData[0])
 
   return (
     <Listbox value={selected} onChange={setSelected} >
       <>
-        <div className="relative mt-2 selectorContainor  selectorContainor-1000 selectorContainor-960 selectorContainor-730 selectorContainor-560">
+
+
+        <div className="relative mt-2 selectorContainor  ${defaultWidth === 0 ? 'selectorContainor-1000 selectorContainor-960 selectorContainor-730 selectorContainor-560' : ''" style={{ width: defaultWidth !== 0 ? `${defaultWidth}px` : 'selectorContainor' }}>
           <Listbox.Button className="relative w-full bg-white py-1 pl-3 pr-10 text-left text-gray-900 listboxButton ">
             <span className="flex items-center">
               <span className="ml-3 block truncate">{selected.name}</span>
@@ -50,7 +41,7 @@ export default function CarSelector() {
 
           <Transition>
             <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm options">
-              {data.map((person) => (
+              {jsonData.map((person) => (
                 <Listbox.Option
                   key={person.id}
                   className={({ active }) =>
