@@ -7,12 +7,16 @@
     padding: 10px 5px;
 }
 
+.carControllerInnerContainner{
+    padding: 10px 15px;
+}
+
 /* .carFilterButtons{
     display: flex;
     flex-wrap: wrap; 
 } */
 
-.showMoreLink{;
+.showMoreLink{
     color: black;
     text-decoration: underline;
 }
