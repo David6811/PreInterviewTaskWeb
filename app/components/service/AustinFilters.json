@@ -1,0 +1,306 @@
+{
+  "Family": [
+    {
+      "id": 0,
+      "name": "Family"
+    },
+    {
+      "id": 1,
+      "name": "124"
+    },
+    {
+      "id": 2,
+      "name": "500"
+    },
+    {
+      "id": 3,
+      "name": "595"
+    },
+    {
+      "id": 4,
+      "name": "695"
+    }
+  ],
+  "AllCarConditions": [
+    {
+      "id": 0,
+      "name": "AllCarConditions"
+    },
+    {
+      "id": 1,
+      "name": "Excellent"
+    },
+    {
+      "id": 2,
+      "name": "Good"
+    },
+    {
+      "id": 3,
+      "name": "Above Average"
+    },
+    {
+      "id": 4,
+      "name": "Average"
+    },
+    {
+      "id": 5,
+      "name": "Below Average"
+    },
+    {
+      "id": 6,
+      "name": "Poor"
+    }
+  ],
+  "States": [
+    {
+      "id": 0,
+      "name": "States"
+    },
+    {
+      "id": 1,
+      "name": "ACT"
+    },
+    {
+      "id": 2,
+      "name": "NSW"
+    },
+    {
+      "id": 3,
+      "name": "QLD"
+    },
+    {
+      "id": 4,
+      "name": "SA"
+    },
+    {
+      "id": 5,
+      "name": "VIC"
+    },
+    {
+      "id": 6,
+      "name": "WA"
+    }
+  ],
+  "CustomDate": [
+    {
+      "id": 0,
+      "name": "Custom Date"
+    },
+    {
+      "id": 1,
+      "name": "Last 7 days"
+    },
+    {
+      "id": 2,
+      "name": "Last 30 days"
+    },
+    {
+      "id": 3,
+      "name": "Last 60 days"
+    },
+    {
+      "id": 4,
+      "name": "Last 90 days"
+    }
+  ],
+  "SaleCategory": [
+    {
+      "id": 0,
+      "name": "Sale Category"
+    },
+    {
+      "id": 1,
+      "name": "Auction"
+    },
+    {
+      "id": 2,
+      "name": "Dealership"
+    },
+    {
+      "id": 3,
+      "name": "Fixed Price"
+    },
+    {
+      "id": 4,
+      "name": "Wholesale"
+    }
+  ],
+  "Badges": [
+    {
+      "id": 0,
+      "name": "Badges"
+    },
+    {
+      "id": 1,
+      "name": "(Blank)"
+    },
+    {
+      "id": 2,
+      "name": "30 TFSI"
+    },
+    {
+      "id": 3,
+      "name": "35 TFSI"
+    },
+    {
+      "id": 4,
+      "name": "40 TFSI S line"
+    },
+    {
+      "id": 5,
+      "name": "Ambition"
+    },
+    {
+      "id": 6,
+      "name": "Attraction"
+    },
+    {
+      "id": 7,
+      "name": "Sport"
+    },
+    {
+      "id": 8,
+      "name": "Sport style Edition"
+    }
+  ],
+  "BodyType": [
+    {
+      "id": 0,
+      "name": "Body Type"
+    },
+    {
+      "id": 1,
+      "name": "Hatchback"
+    }
+  ],
+  "BodyTypeConfig": [
+    {
+      "id": 1,
+      "name": "Body Type Config"
+    },
+    {
+      "id": 1,
+      "name": "(Blank)"
+    }
+  ],
+  "FuelType": [
+    {
+      "id": 0,
+      "name": "Fuel Type"
+    },
+    {
+      "id": 1,
+      "name": "Diesel"
+    },
+    {
+      "id": 2,
+      "name": "Petrol"
+    }
+  ],
+  "Transmission": [
+    {
+      "id": 0,
+      "name": "Transmission"
+    },
+    {
+      "id": 1,
+      "name": "Automatic"
+    },
+    {
+      "id": 2,
+      "name": "Manual"
+    }
+  ],
+  "Engine": [
+    {
+      "id": 0,
+      "name": "Engine"
+    },
+    {
+      "id": 1,
+      "name": "1.0"
+    },
+    {
+      "id": 2,
+      "name": "1.2"
+    },
+    {
+      "id": 3,
+      "name": "1.4"
+    },
+    {
+      "id": 4,
+      "name": "1.5"
+    },
+    {
+      "id": 5,
+      "name": "1.6"
+    },
+    {
+      "id": 6,
+      "name": "2.0"
+    }
+  ],
+  "Cylinders": [
+    {
+      "id": 0,
+      "name": "Cylinders"
+    },
+    {
+      "id": 1,
+      "name": "3"
+    },
+    {
+      "id": 2,
+      "name": "4"
+    }
+  ],
+  "Division": [
+    {
+      "id": 0,
+      "name": "Division"
+    },
+    {
+      "id": 1,
+      "name": "Motor Vehicles"
+    }
+  ],
+  "Drive": [
+    {
+      "id": 0,
+      "name": "Drive"
+    },
+    {
+      "id": 1,
+      "name": "Front Wheel Drive"
+    }
+  ],
+  "Seat": [
+    {
+      "id": 0,
+      "name": "Seat"
+    },
+    {
+      "id": 1,
+      "name": "4"
+    },
+    {
+      "id": 2,
+      "name": "5"
+    }
+  ],
+  "Doors": [
+    {
+      "id": 0,
+      "name": "Doors"
+    },
+    {
+      "id": 1,
+      "name": "3"
+    },
+    {
+      "id": 2,
+      "name": "5"
+    }
+  ]
+}
