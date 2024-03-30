@@ -7,13 +7,12 @@
     padding: 10px 5px;
 }
 
-.carFilterButtons{
+/* .carFilterButtons{
     display: flex;
     flex-wrap: wrap; 
-}
+} */
 
-.showMoreLink{
-    width: 300px;
+.showMoreLink{;
     color: black;
     text-decoration: underline;
 }
