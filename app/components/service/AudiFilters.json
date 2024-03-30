@@ -147,6 +147,10 @@
     ],
     "AllCarConditions": [
       {
+        "id": 0,
+        "name": "AllCarConditions"
+      },
+      {
         "id": 1,
         "name": "Excellent"
       },
@@ -172,6 +176,10 @@
       }
     ],
     "States": [
+      {
+        "id": 0,
+        "name": "States"
+      },
       {
         "id": 1,
         "name": "ACT"
@@ -199,6 +207,10 @@
     ],
     "CustomDate": [
       {
+        "id": 0,
+        "name": "Custom Date"
+      },
+      {
         "id": 1,
         "name": "Last 7 days"
       },
@@ -217,6 +229,10 @@
     ],
     "SaleCategory": [
       {
+        "id": 0,
+        "name": "Sale Category"
+      },
+      {
         "id": 1,
         "name": "Auction"
       },
@@ -234,6 +250,10 @@
       }
     ],
     "Badges": [
+      {
+        "id": 0,
+        "name": "Badges"
+      },
       {
         "id": 1,
         "name": "(Blank)"
@@ -269,6 +289,10 @@
     ],
     "BodyType": [
       {
+        "id": 0,
+        "name": "Body Type"
+      },
+      {
         "id": 1,
         "name": "Hatchback"
       }
@@ -276,10 +300,18 @@
     "BodyTypeConfig": [
       {
         "id": 1,
+        "name": "Body Type Config"
+      },
+      {
+        "id": 1,
         "name": "(Blank)"
       }
     ],
     "FuelType": [
+      {
+        "id": 0,
+        "name": "Fuel Type"
+      },
       {
         "id": 1,
         "name": "Diesel"
@@ -291,6 +323,10 @@
     ],
     "Transmission": [
       {
+        "id": 0,
+        "name": "Transmission"
+      },
+      {
         "id": 1,
         "name": "Automatic"
       },
@@ -300,6 +336,10 @@
       }
     ],
     "Engine": [
+      {
+        "id": 0,
+        "name": "Engine"
+      },
       {
         "id": 1,
         "name": "1.0"
@@ -327,6 +367,10 @@
     ],
     "Cylinders": [
       {
+        "id": 0,
+        "name": "Cylinders"
+      },
+      {
         "id": 1,
         "name": "3"
       },
@@ -335,15 +379,31 @@
         "name": "4"
       }
     ],
-    "Division": [{
-      "id": 1,
-      "name": "Motor Vehicles"
-    }],
-    "Drive": [{
-      "id": 1,
-      "name": "Front Wheel Drive"
-    }],
+    "Division": [
+      {
+        "id": 0,
+        "name": "Division"
+      },
+      {
+        "id": 1,
+        "name": "Motor Vehicles"
+      }
+    ],
+    "Drive": [
+      {
+        "id": 0,
+        "name": "Drive"
+      },
+      {
+        "id": 1,
+        "name": "Front Wheel Drive"
+      }
+    ],
     "Seat": [
+      {
+        "id": 0,
+        "name": "Seat"
+      },
       {
         "id": 1,
         "name": "4"
@@ -354,6 +414,10 @@
       }
     ],
     "Doors": [
+      {
+        "id": 0,
+        "name": "Doors"
+      },
       {
         "id": 1,
         "name": "3"

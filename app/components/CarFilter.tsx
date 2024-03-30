@@ -3,7 +3,11 @@ import './CarFilter.css';
 import CarSelector from './CarSelector';
 import SortButton from './SortButton';
 import React, { useState } from 'react';
+import AbarthFilters from './service/AbarthFilters.json';
+import AlfaRomeoFilters from './service/AlfaRomeoFilters.json';
 import AudiFilters from './service/AudiFilters.json';
+import AustinFilters from './service/AustinFilters.json';
+import BentleyFilters from './service/BentleyFilters.json';
 
 
 export default function CarFilter() {
@@ -30,9 +34,10 @@ export default function CarFilter() {
         },
     ]
 
+
     const [showMoreFilters, setShowMoreFilters] = useState(false); // State to track whether to show more filters
 
-    const filters = AudiFilters;
+    const filters = AbarthFilters;
     return (
         <div>
             <div className='carFilterContainer mt-5' style={{ paddingLeft: "10px", paddingRight: "10px" }}>
