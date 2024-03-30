@@ -5,15 +5,19 @@ import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon,PlayIcon } from '@heroicons/react/20/solid'
 
-const data = [
+const sort = [
   {
-    id: 1,
-    name: 'Sort by Sale Date',
+      id: 1,
+      name: 'Sort by Sale Date',
   },
   {
-    id: 2,
-    name: 'Arlene Mccoy',
+      id: 2,
+      name: 'Sort by Age',
   },
+  {
+      id: 3,
+      name: 'Sort by Odometer',
+  }
 ]
 
 function classNames(...classes) {
@@ -21,7 +25,7 @@ function classNames(...classes) {
 }
 
 export default function SortButton() {
-  const [selected, setSelected] = useState(data[0])
+  const [selected, setSelected] = useState(sort[0])
 
   return (
     <Listbox value={selected} onChange={setSelected} >
@@ -38,7 +42,7 @@ export default function SortButton() {
 
           <Transition>
             <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm options_Sort">
-              {data.map((person) => (
+              {sort.map((person) => (
                 <Listbox.Option
                   key={person.id}
                   className={({ active }) =>

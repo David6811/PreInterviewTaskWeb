@@ -34,6 +34,7 @@ export default function CarFilter() {
         },
     ]
 
+
     const [showMoreFilters, setShowMoreFilters] = useState(false); // State to track whether to show more filters
 
     const filters = AbarthFilters;
