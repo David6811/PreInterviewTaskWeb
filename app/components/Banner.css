@@ -4,7 +4,7 @@
 
 .banner {
     color: white;
-    height: 560px;
+    /* height: 560px; */
     background-color: #051c2c; /* Use background-color instead of backgroundColor */
 }
 
