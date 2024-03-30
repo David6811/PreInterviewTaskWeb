@@ -60,9 +60,9 @@ export default function CarFilter() {
 
                     <div className='flex gap-5 justify-center sm:justify-end'>
                         <button className="sortButton">Sort by Sold Date</button>
-                        <div>
+                        <div className="flex items-center flex-shrink-0">
                             <button className="ascButton">ASC</button>
-                            <button className="descButton">desc</button>
+                            <button className="descButton">DESC</button>
                         </div>
                     </div>
                 </div>
