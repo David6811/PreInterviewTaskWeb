@@ -1,0 +1,10 @@
+.FootContainor {
+    font-size: 12px;
+    background-color: #051c2c;
+    height: 133px;
+    color: rgba(255, 255, 255, 0.6)
+}
+
+a {
+    cursor: pointer;
+}
