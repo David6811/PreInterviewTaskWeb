@@ -7,12 +7,11 @@
     padding: 10px 5px;
 }
 
-/* .carFilterButtons{
-    display: flex;
-    flex-wrap: wrap; 
-} */
+.carControllerInnerContainner{
+    padding: 10px 15px;
+}
 
-.showMoreLink{;
+.showMoreLink{
     color: black;
     text-decoration: underline;
 }
@@ -34,8 +33,8 @@
 }
 
 .filterStatistics{
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .sortButton{
