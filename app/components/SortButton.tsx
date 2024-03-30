@@ -1,30 +1,18 @@
 'use client'
-import './CarSelector.css'; // Import the CSS file
+import './SortButton.css'; // Import the CSS file
 
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, ChevronUpDownIcon, ChevronDownIcon, PlayIcon} from '@heroicons/react/20/solid'
+import { CheckIcon,PlayIcon } from '@heroicons/react/20/solid'
 
 const data = [
   {
     id: 1,
-    name: 'Audi',
+    name: 'Sort by Sale Date',
   },
   {
     id: 2,
     name: 'Arlene Mccoy',
-  },
-  {
-    id: 3,
-    name: 'Devon Webb',
-  },
-  {
-    id: 4,
-    name: 'Tom Cook',
-  },
-  {
-    id: 5,
-    name: 'Tanya Fox',
   },
 ]
 
@@ -32,19 +20,19 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function CarSelector() {
-  const [selected, setSelected] = useState(data[3])
+export default function SortButton() {
+  const [selected, setSelected] = useState(data[0])
 
   return (
     <Listbox value={selected} onChange={setSelected} >
       <>
-        <div className="relative mt-2 selectorContainor  selectorContainor-1000 selectorContainor-960 selectorContainor-730 selectorContainor-560">
-          <Listbox.Button className="relative w-full bg-white py-1 pl-3 pr-10 text-left text-gray-900 listboxButton ">
+      <div className="relative mt-2 selectorContainor">
+          <Listbox.Button className="relative w-full bg-white py-1 pl-3 pr-10 text-left text-gray-900 listboxButton_Sort " style={{height:'50px'}}>
             <span className="flex items-center">
               <span className="ml-3 block truncate">{selected.name}</span>
             </span>
             <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
-              <PlayIcon className="h-2 w-2 mr-1 text-gray-900 transform rotate-90" aria-hidden="true" />
+              <PlayIcon className="h-3 w-3 mr-2 text-white text-gray-900 transform rotate-90" aria-hidden="true" />
             </span>
           </Listbox.Button>
 

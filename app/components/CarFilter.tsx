@@ -1,5 +1,6 @@
 import './CarFilter.css'; // Import the CSS file
 import CarSelector from './CarSelector';
+import SortButton from './SortButton';
 
 export default function CarFilter() {
     return (
@@ -34,6 +35,49 @@ export default function CarFilter() {
                     </div>
                 </div>
 
+                {/* <div className='moreCarInnerContainner'>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1">
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        
+                    </div>
+                </div> */}
+
                 <div className='carControllerInnerContainner'>
                     <div className='grid grid-cols-1 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-1 mt-3'>
                         <div className='mt-1'>
@@ -59,7 +103,8 @@ export default function CarFilter() {
                     </div>
 
                     <div className='flex gap-5 justify-center sm:justify-end'>
-                        <button className="sortButton">Sort by Sold Date</button>
+                        {/* <button className="sortButton">Sort by Sold Date</button> */}
+                        <SortButton />
                         <div className="flex items-center flex-shrink-0">
                             <button className="ascButton">ASC</button>
                             <button className="descButton">DESC</button>
