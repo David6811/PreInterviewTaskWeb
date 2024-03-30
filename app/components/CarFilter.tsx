@@ -133,14 +133,16 @@ export default function CarFilter() {
                         <div className='whitespace-nowrap'>Average age: 8yrs 10mos</div>
                     </div>
 
-                    <div className='flex gap-5 justify-center sm:justify-end'>
-                        {/* <button className="sortButton">Sort by Sold Date</button> */}
-                        <SortButton />
+                    <div className='flex gap-3 justify-center sm:justify-end'>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <SortButton />
+                        </div>
                         <div className="flex items-center flex-shrink-0">
                             <button className="ascButton">ASC</button>
                             <button className="descButton">DESC</button>
                         </div>
                     </div>
+
                 </div>
             </div>
 

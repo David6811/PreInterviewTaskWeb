@@ -26,7 +26,7 @@ export default function SortButton() {
   return (
     <Listbox value={selected} onChange={setSelected} >
       <>
-      <div className="relative mt-2 selectorContainor">
+      <div className="relative selectorContainor">
           <Listbox.Button className="relative w-full bg-white py-1 pl-3 pr-10 text-left text-gray-900 listboxButton_Sort " style={{height:'50px'}}>
             <span className="flex items-center">
               <span className="ml-3 block truncate">{selected.name}</span>
