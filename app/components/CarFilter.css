@@ -4,7 +4,7 @@
 }
 
 .carInnerContainner{
-    padding: 10px 5px;
+    padding: 5px 5px;
 }
 
 .moreCarInnerContainner{
@@ -22,9 +22,9 @@
 }
 
 .descriptionInput {
-    margin-top: 8px;
+    margin-top: 3px;
     width: 460px;
-    height: 32px;
+    height: 36px;
     border-radius: 25px;
     color: black;
     font-size: 14px;
@@ -91,3 +91,4 @@
 /* *{
     border: 1px solid white;
 } */
+

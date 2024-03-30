@@ -29,10 +29,10 @@ export default function CarSelector({ jsonData, defaultWidth }: CarSelectorProps
       <>
 
 
-        <div className="relative mt-2 selectorContainor  ${defaultWidth === 0 ? 'selectorContainor-1000 selectorContainor-960 selectorContainor-730 selectorContainor-560' : ''" style={{ width: defaultWidth !== 0 ? `${defaultWidth}px` : 'selectorContainor' }}>
+        <div className="flex1 relative selectorContainor  ${defaultWidth === 0 ? 'selectorContainor-1000 selectorContainor-960 selectorContainor-730 selectorContainor-560' : ''" style={{ width: defaultWidth !== 0 ? `${defaultWidth}px` : 'selectorContainor' }}  style={{height:'34px'}}>
           <Listbox.Button className="relative w-full bg-white py-1 pl-3 pr-10 text-left text-gray-900 listboxButton ">
             <span className="flex items-center">
-              <span className="ml-3 block truncate">{selected.name}</span>
+              <span className="ml-1 block truncate">{selected.name}</span>
             </span>
             <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
               <PlayIcon className="h-2 w-2 mr-1 text-gray-900 transform rotate-90" aria-hidden="true" />

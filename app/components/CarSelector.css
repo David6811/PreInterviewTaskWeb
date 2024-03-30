@@ -23,12 +23,17 @@
     background-color: #f5f5f5;
 }
 
+.flex1{
+    flex: 1;
+}
+
 /* 960 730 560 xl lg mid sm*/
 @media (max-width:1020px) {
     .selectorContainor-1020 {
         width: 500px;
     }
 }
+
 
 @media (max-width:960px) {
     .selectorContainor-960 {

@@ -36,7 +36,7 @@ export default function CarFilter() {
         <div>
             <div className='carFilterContainer mt-5'>
                 <div className='carInnerContainner'>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1 mt-3">
                         <div className="flex justify-center">
                             <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
@@ -64,7 +64,7 @@ export default function CarFilter() {
                     </div>
                 </div>
 
-                <div id="moreFilter"  className={`moreCarInnerContainner ${showMoreFilters ? '' : 'hidden'}`}>
+                <div id="moreFilter" className={`moreCarInnerContainner ${showMoreFilters ? '' : 'hidden'}`}>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1">
                         <div className="flex justify-center">
                             <CarSelector jsonData={data} defaultWidth={0} />
@@ -72,6 +72,7 @@ export default function CarFilter() {
                         <div className="flex justify-center">
                             <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
+
                         <div className="flex justify-center">
                             <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
@@ -94,7 +95,7 @@ export default function CarFilter() {
                         <div className="flex justify-center">
                             <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
-                        <div className="flex justify-center gap-5">
+                        <div className="flex justify-center gap-2">
                             <CarSelector jsonData={data} defaultWidth={108} />
                             <CarSelector jsonData={data} defaultWidth={108} />
                         </div>
