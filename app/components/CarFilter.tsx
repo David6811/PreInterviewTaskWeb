@@ -62,7 +62,7 @@ export default function CarFilter() {
                         <button className="sortButton">Sort by Sold Date</button>
                         <div className="flex items-center flex-shrink-0">
                             <button className="ascButton">ASC</button>
-                            <button className="descButton">desc</button>
+                            <button className="descButton">DESC</button>
                         </div>
                     </div>
                 </div>

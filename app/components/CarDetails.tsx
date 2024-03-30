@@ -1,74 +1,49 @@
+'use client'
 import './CarDetails.css'; // Import the CSS file
+import React, { useState, useEffect } from 'react';
+import TableNormal from './TableNormal';
+import TableInfo from './TableInfo';
+import TableList from './TableList';
 
 export default function CarDetails() {
+    const [activeComponent, setActiveComponent] = useState<'normal' | 'info' | 'list' | null>(null);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            if (width < 756) {
+                setActiveComponent('list');
+            } else if (width >= 756 && width < 1080) {
+                setActiveComponent('info');
+            } else {
+                setActiveComponent('normal');
+            }
+        };
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const renderComponent = () => {
+        switch (activeComponent) {
+            case 'normal':
+                return <TableNormal />;
+            case 'info':
+                return <TableInfo />;
+            case 'list':
+                return <TableList />;
+            default:
+                return null;
+        }
+    };
+
     return (
-        <div className="flex justify-between items-center carDetailContainor">
-            <div></div>
-            <div className="flex items-left h-full">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Make</th> 
-                            <th>Model</th> 
-                            <th>Year</th> 
-                            <th style={{width:'225px'}}>Description</th>
-                            <th>Odometer</th>
-                            <th>Vehicle condition</th> 
-                            <th>Sale location</th> 
-                            <th>Sale category</th> 
-                            <th>Salvage Vehicle</th>
-                            <th>Sale date</th> 
-                            <th></th>
-                            <th>Sale price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Audi</td>
-                            <td>A5</td>
-                            <td>2016</td>
-                            <td>8T MY16 S line plus Coupe 2dr S tronic 7sp quattro 2.0T</td>
-                            <td>82,640</td>
-                            <td>Above Average</td>
-                            <td>Southport (QLD)</td>
-                            <td>Dealership</td>
-                            <td>No</td>
-                            <td>Mar 2024</td>
-                            <td><a>More</a></td>
-                            <td><button>Subscribe to reveal price</button></td>
-                        </tr>
-                        <tr>
-                            <td>Audi</td>
-                            <td>A5</td>
-                            <td>2016</td>
-                            <td>8T MY16 S line plus Coupe 2dr S tronic 7sp quattro 2.0T</td>
-                            <td>82,640</td>
-                            <td>Above Average</td>
-                            <td>Southport (QLD)</td>
-                            <td>Dealership</td>
-                            <td>No</td>
-                            <td>Mar 2024</td>
-                            <td><a>More</a></td>
-                            <td><button>Subscribe to reveal price</button></td>
-                        </tr>
-                        <tr>
-                            <td>Audi</td>
-                            <td>A5</td>
-                            <td>2016</td>
-                            <td>8T MY16 S line plus Coupe 2dr S tronic 7sp quattro 2.0T</td>
-                            <td>82,640</td>
-                            <td>Above Average</td>
-                            <td>Southport (QLD)</td>
-                            <td>Dealership</td>
-                            <td>No</td>
-                            <td>Mar 2024</td>
-                            <td><a>More</a></td>
-                            <td><button>Subscribe to reveal price</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div></div>
+        <div className="carDetailContainor">
+            {renderComponent()}
         </div>
     );
 }
+
+

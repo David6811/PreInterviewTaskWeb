@@ -1,0 +1,14 @@
+.subscribeButton {
+    width: 224px;
+    height: 32px;
+    font-family: sans-serif;
+
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 14px;
+    font-weight: 400;
+
+    border-radius: 25px;
+    background-color: #00a1cb;
+
+
+}
