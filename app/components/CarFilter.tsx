@@ -6,15 +6,41 @@ export default function CarFilter() {
         <div>
             <div className='carFilterContainer mt-5'>
                 <div className='carFilterInnerContainner'>
-                    <div className='flex justify-between items-center  mt-3 carFilters'>
-                        <CarSelector />
-                        <CarSelector />
-                        <CarSelector />
-                        <CarSelector />
-                        <CarSelector />
-                        <CarSelector />
-                        <CarSelector />
-                        <CarSelector />
+                    {/* <div className='flex justify-between items-center  mt-3 carFilters'>
+                        <div> <CarSelector /></div>
+                        <div> <CarSelector /></div>
+                        <div> <CarSelector /></div>
+                        <div> <CarSelector /></div>
+                        <div> <CarSelector /></div>
+                        <div> <CarSelector /></div>
+                        <div> <CarSelector /></div>
+                        <div> <CarSelector /></div>
+                    </div> */}
+                    <div className="grid grid-cols-1 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1 mt-3">
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector />
+                        </div>
                     </div>
                     <div className='flex justify-between items-center mt-8 mr-3 carFilterButtons'>
                         <a className='showMoreLink'>Show more filters</a>
@@ -26,7 +52,7 @@ export default function CarFilter() {
                 </div>
             </div>
 
-            <div className='mt-10 flex justify-between items-center'>
+            {/* <div className='mt-10 flex justify-between items-center'>
                 <div className='flex justify-between items-center filterStatistics'>
                     <div className='mr-6'>Records: 125</div>
                     <div className='mr-6'>Average KM: 94,107</div>
@@ -38,7 +64,7 @@ export default function CarFilter() {
                     <button className="descButton">desc</button>
                 </div>
 
-            </div>
+            </div> */}
         </div>
     );
 }
