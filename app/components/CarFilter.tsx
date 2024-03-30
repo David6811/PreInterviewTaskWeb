@@ -5,18 +5,8 @@ export default function CarFilter() {
     return (
         <div>
             <div className='carFilterContainer mt-5'>
-                <div className='carFilterInnerContainner'>
-                    {/* <div className='flex justify-between items-center  mt-3 carFilters'>
-                        <div> <CarSelector /></div>
-                        <div> <CarSelector /></div>
-                        <div> <CarSelector /></div>
-                        <div> <CarSelector /></div>
-                        <div> <CarSelector /></div>
-                        <div> <CarSelector /></div>
-                        <div> <CarSelector /></div>
-                        <div> <CarSelector /></div>
-                    </div> */}
-                    <div className="grid grid-cols-1 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1 mt-3">
+                <div className='carInnerContainner'>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1 mt-3">
                         <div className="flex justify-center">
                             <CarSelector />
                         </div>
@@ -42,14 +32,22 @@ export default function CarFilter() {
                             <CarSelector />
                         </div>
                     </div>
-                    <div className='flex justify-between items-center mt-8 mr-3 carFilterButtons'>
-                        <a className='showMoreLink'>Show more filters</a>
-                        <div>
-                            <button className='applyButton mr-3'>Apply</button>
-                            <button className='clearButton'>Clear</button>
+
+
+                    <div className='carInnerContainner'>
+                        <div className='grid grid-rows-2 flex justify-between items-center mt-8 carFilterButtons'>
+                            <div className='flex justify-between items-center '>
+                                <a className='showMoreLink'>Show more filters</a>
+                            </div>
+                            <div className='flex justify-between items-center gap-3'>
+                                <button className='applyButton'>Apply</button>
+                                <button className='clearButton'>Clear</button>
+                            </div>
                         </div>
                     </div>
+
                 </div>
+
             </div>
 
             {/* <div className='mt-10 flex justify-between items-center'>
