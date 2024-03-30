@@ -1,0 +1,57 @@
+.estimateContainor {
+    margin-top: 70px;
+    height: 288px;
+    background-color: #004c93;
+}
+
+.estimateTitle {
+    margin-top: 70px;
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 36px;
+    line-height: 40px;
+    font-family: sans-serif;
+    font-weight: 550;
+
+}
+
+.subEstimateTitle {
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.estimateButton {
+    margin-top: 40px;
+    background-color: #13ad2a;
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 100;
+
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+/* 960 730 560 xl lg mid sm*/
+@media (max-width:730px) {
+    .none-730 {
+        display: none;
+    }
+
+    .full-730 {
+        width: 90%;
+    }
+
+    .estimateTitle-730 {
+        margin-top: 15px;
+        font-size: 28px;
+        font-weight: 550;
+    }
+
+    .subEstimateTitle-730 {
+        font-size: 22px;
+        font-weight: 100;
+    }
+}
