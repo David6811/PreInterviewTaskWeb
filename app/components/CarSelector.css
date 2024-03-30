@@ -1,7 +1,6 @@
 .selectorContainor {
-    width: 200px;
+    width: 220px;
     height: 48px;
-    margin-right: 7px;
 }
 
 .listboxButton {
@@ -25,35 +24,27 @@
 }
 
 /* 960 730 560 xl lg mid sm*/
-@media (max-width:1000px) {
-    .selectorContainor-1000 {
-        width: 280px;
-        height: 35px;
-        margin-right: 7px;
+@media (max-width:1020px) {
+    .selectorContainor-1020 {
+        width: 500px;
     }
 }
 
 @media (max-width:960px) {
     .selectorContainor-960 {
-        width: 380px;
-        height: 35px;
-        margin-right: 7px;
+        width: 500px;
     }
 }
 
 @media (max-width:730px) {
     .selectorContainor-730 {
-        width: 280px;
-        height: 35px;
-        margin-right: 7px;
+        width: 500px;
     }
 }
 
 @media (max-width:560px) {
     .selectorContainor-730 {
         width: 400px;
-        height: 35px;
-        margin-right: 7px;
     }
 }
 

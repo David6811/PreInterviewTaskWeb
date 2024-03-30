@@ -1,87 +1,117 @@
+'use client'
 import './CarFilter.css'; // Import the CSS file
 import CarSelector from './CarSelector';
 import SortButton from './SortButton';
+import React, { useState } from 'react';
+
 
 export default function CarFilter() {
+    const data = [
+        {
+            id: 1,
+            name: 'Audi',
+        },
+        {
+            id: 2,
+            name: 'Arlene Mccoy',
+        },
+        {
+            id: 3,
+            name: 'Devon Webb',
+        },
+        {
+            id: 4,
+            name: 'Tom Cook',
+        },
+        {
+            id: 5,
+            name: 'Tanya Fox',
+        },
+    ]
+
+    const [showMoreFilters, setShowMoreFilters] = useState(false); // State to track whether to show more filters
+
+
     return (
         <div>
             <div className='carFilterContainer mt-5'>
                 <div className='carInnerContainner'>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1 mt-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1">
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                     </div>
                 </div>
 
-                {/* <div className='moreCarInnerContainner'>
+                <div id="moreFilter"  className={`moreCarInnerContainner ${showMoreFilters ? '' : 'hidden'}`}>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1">
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
 
                         <div className="flex justify-center">
-                            <CarSelector />
+                            <CarSelector jsonData={data} defaultWidth={0} />
                         </div>
-                        <div className="flex justify-center">
-                            <CarSelector />
+                        <div className="flex justify-center gap-5">
+                            <CarSelector jsonData={data} defaultWidth={108} />
+                            <CarSelector jsonData={data} defaultWidth={108} />
                         </div>
-                        <div className="flex justify-center">
-                            <CarSelector />
+
+                        <div className="ml-2">
+                            <input className="descriptionInput" style={{ width: 420 }} placeholder="e.g. Metallic Paint, Power front seats, Power Sunrroof, ..." />
                         </div>
-                        <div className="flex justify-center">
-                            <CarSelector />
-                        </div>
-                        
+
                     </div>
-                </div> */}
+                </div>
 
                 <div className='carControllerInnerContainner'>
                     <div className='grid grid-cols-1 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-1 mt-3'>
                         <div className='mt-1'>
-                            <a className='flex justify-center showMoreLink'>Show more filters</a>
+                            <a className='flex justify-center showMoreLink' onClick={() => setShowMoreFilters(!showMoreFilters)}>
+                                {showMoreFilters ? 'Hide more filters' : 'Show more filters'}
+                            </a>
                         </div>
                         <div></div>
                         <div></div>
