@@ -6,14 +6,22 @@ import Foot from "../components/Foot";
 import LoadMore from "../components/LoadMore";
 import { useSearchParams } from 'next/navigation'
 import React, { useState, useEffect } from 'react';
-import { Factors } from '../types/interfaces';
+import { setDefaultMake, setDefaultModel } from '../types/interfaces';
 import { useFactorsState } from '../components/UseFactorsState';
+
+
 
 const url_prod = "https://api.helloai.ink/";
 const url_dev = "http://localhost:8080/";
 
 export default function Home() {
   const searchParams = useSearchParams()
+
+
+
+  setDefaultMake(searchParams.get('make') || 'Audi');
+  setDefaultModel(searchParams.get('model') || 'A5');
+
 
   const [make, setMake] = useFactorsState({ "id": 0, "name": searchParams.get('make') || 'Audi' });
   const [model, setModel] = useFactorsState({ "id": 0, "name": searchParams.get('model') || 'A5' });
@@ -65,6 +73,7 @@ export default function Home() {
 
 
   const [carData, setCarData] = useState(null);
+  const [apply, setApply] = useState(0);
 
   useEffect(() => {
     const fetchCarData = async () => {
@@ -108,7 +117,7 @@ export default function Home() {
     };
 
     fetchCarData();
-  }, []);
+  }, [apply]);
 
 
   return (
@@ -137,6 +146,7 @@ export default function Home() {
         setSort={setSort}
         setAsc={setAsc}
         carData={carData}
+        setApply = {setApply}
       />
 
       <CarDetails carData={carData} />
