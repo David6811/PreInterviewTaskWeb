@@ -1,435 +1,486 @@
 {
-     "Family": [
-      {
-        "id": 1,
-        "name": "Family"
-      },
-      {
-        "id": 1,
-        "name": "A1"
-      },
-      {
-        "id": 2,
-        "name": "A3"
-      },
-      {
-        "id": 3,
-        "name": "A4"
-      },
-      {
-        "id": 4,
-        "name": "A5"
-      },
-      {
-        "id": 5,
-        "name": "A6"
-      },
-      {
-        "id": 6,
-        "name": "A7"
-      },
-      {
-        "id": 7,
-        "name": "A8"
-      },
-      {
-        "id": 8,
-        "name": "allroad"
-      },
-      {
-        "id": 9,
-        "name": "e-tron"
-      },
-      {
-        "id": 10,
-        "name": "Q2"
-      },
-      {
-        "id": 11,
-        "name": "Q3"
-      },
-      {
-        "id": 12,
-        "name": "Q5"
-      },
-      {
-        "id": 13,
-        "name": "Q7"
-      },
-      {
-        "id": 14,
-        "name": "Q8"
-      },
-      {
-        "id": 15,
-        "name": "R8"
-      },
-      {
-        "id": 16,
-        "name": "RS e-tron GT"
-      },
-      {
-        "id": 17,
-        "name": "RS3"
-      },
-      {
-        "id": 18,
-        "name": "RS4"
-      },
-      {
-        "id": 19,
-        "name": "RS5"
-      },
-      {
-        "id": 20,
-        "name": "RS6"
-      },
-      {
-        "id": 21,
-        "name": "RS7"
-      },
-      {
-        "id": 22,
-        "name": "RS Q3"
-      },
-      {
-        "id": 23,
-        "name": "RS Q8"
-      },
-      {
-        "id": 24,
-        "name": "S3"
-      },
-      {
-        "id": 25,
-        "name": "S4"
-      },
-      {
-        "id": 26,
-        "name": "S5"
-      },
-      {
-        "id": 27,
-        "name": "S6"
-      },
-      {
-        "id": 28,
-        "name": "S7"
-      },
-      {
-        "id": 29,
-        "name": "S8"
-      },
-      {
-        "id": 30,
-        "name": "SQ2"
-      },
-      {
-        "id": 31,
-        "name": "SQ5"
-      },
-      {
-        "id": 32,
-        "name": "SQ7"
-      },
-      {
-        "id": 33,
-        "name": "SQ8"
-      },
-      {
-        "id": 34,
-        "name": "TT"
-      },
-      {
-        "id": 35,
-        "name": "TT RS"
-      },
-      {
-        "id": 36,
-        "name": "TTS"
-      }
-    ],
-    "AllCarConditions": [
-      {
-        "id": 0,
-        "name": "AllCarConditions"
-      },
-      {
-        "id": 1,
-        "name": "Excellent"
-      },
-      {
-        "id": 2,
-        "name": "Good"
-      },
-      {
-        "id": 3,
-        "name": "Above Average"
-      },
-      {
-        "id": 4,
-        "name": "Average"
-      },
-      {
-        "id": 5,
-        "name": "Below Average"
-      },
-      {
-        "id": 6,
-        "name": "Poor"
-      }
-    ],
-    "States": [
-      {
-        "id": 0,
-        "name": "States"
-      },
-      {
-        "id": 1,
-        "name": "ACT"
-      },
-      {
-        "id": 2,
-        "name": "NSW"
-      },
-      {
-        "id": 3,
-        "name": "QLD"
-      },
-      {
-        "id": 4,
-        "name": "SA"
-      },
-      {
-        "id": 5,
-        "name": "VIC"
-      },
-      {
-        "id": 6,
-        "name": "WA"
-      }
-    ],
-    "CustomDate": [
-      {
-        "id": 0,
-        "name": "Custom Date"
-      },
-      {
-        "id": 1,
-        "name": "Last 7 days"
-      },
-      {
-        "id": 2,
-        "name": "Last 30 days"
-      },
-      {
-        "id": 3,
-        "name": "Last 60 days"
-      },
-      {
-        "id": 4,
-        "name": "Last 90 days"
-      }
-    ],
-    "SaleCategory": [
-      {
-        "id": 0,
-        "name": "Sale Category"
-      },
-      {
-        "id": 1,
-        "name": "Auction"
-      },
-      {
-        "id": 2,
-        "name": "Dealership"
-      },
-      {
-        "id": 3,
-        "name": "Fixed Price"
-      },
-      {
-        "id": 4,
-        "name": "Wholesale"
-      }
-    ],
-    "Badges": [
-      {
-        "id": 0,
-        "name": "Badges"
-      },
-      {
-        "id": 1,
-        "name": "(Blank)"
-      },
-      {
-        "id": 2,
-        "name": "30 TFSI"
-      },
-      {
-        "id": 3,
-        "name": "35 TFSI"
-      },
-      {
-        "id": 4,
-        "name": "40 TFSI S line"
-      },
-      {
-        "id": 5,
-        "name": "Ambition"
-      },
-      {
-        "id": 6,
-        "name": "Attraction"
-      },
-      {
-        "id": 7,
-        "name": "Sport"
-      },
-      {
-        "id": 8,
-        "name": "Sport style Edition"
-      }
-    ],
-    "BodyType": [
-      {
-        "id": 0,
-        "name": "Body Type"
-      },
-      {
-        "id": 1,
-        "name": "Hatchback"
-      }
-    ],
-    "BodyTypeConfig": [
-      {
-        "id": 1,
-        "name": "Body Type Config"
-      },
-      {
-        "id": 1,
-        "name": "(Blank)"
-      }
-    ],
-    "FuelType": [
-      {
-        "id": 0,
-        "name": "Fuel Type"
-      },
-      {
-        "id": 1,
-        "name": "Diesel"
-      },
-      {
-        "id": 2,
-        "name": "Petrol"
-      }
-    ],
-    "Transmission": [
-      {
-        "id": 0,
-        "name": "Transmission"
-      },
-      {
-        "id": 1,
-        "name": "Automatic"
-      },
-      {
-        "id": 2,
-        "name": "Manual"
-      }
-    ],
-    "Engine": [
-      {
-        "id": 0,
-        "name": "Engine"
-      },
-      {
-        "id": 1,
-        "name": "1.0"
-      },
-      {
-        "id": 2,
-        "name": "1.2"
-      },
-      {
-        "id": 3,
-        "name": "1.4"
-      },
-      {
-        "id": 4,
-        "name": "1.5"
-      },
-      {
-        "id": 5,
-        "name": "1.6"
-      },
-      {
-        "id": 6,
-        "name": "2.0"
-      }
-    ],
-    "Cylinders": [
-      {
-        "id": 0,
-        "name": "Cylinders"
-      },
-      {
-        "id": 1,
-        "name": "3"
-      },
-      {
-        "id": 2,
-        "name": "4"
-      }
-    ],
-    "Division": [
-      {
-        "id": 0,
-        "name": "Division"
-      },
-      {
-        "id": 1,
-        "name": "Motor Vehicles"
-      }
-    ],
-    "Drive": [
-      {
-        "id": 0,
-        "name": "Drive"
-      },
-      {
-        "id": 1,
-        "name": "Front Wheel Drive"
-      }
-    ],
-    "Seat": [
-      {
-        "id": 0,
-        "name": "Seat"
-      },
-      {
-        "id": 1,
-        "name": "4"
-      },
-      {
-        "id": 2,
-        "name": "5"
-      }
-    ],
-    "Doors": [
-      {
-        "id": 0,
-        "name": "Doors"
-      },
-      {
-        "id": 1,
-        "name": "3"
-      },
-      {
-        "id": 2,
-        "name": "5"
-      }
-    ]
-  }
-  
+  "Family": [
+    {
+      "id": 0,
+      "name": "Family"
+    },
+    {
+      "id": 1,
+      "name": "A1"
+    },
+    {
+      "id": 2,
+      "name": "A3"
+    },
+    {
+      "id": 3,
+      "name": "A4"
+    },
+    {
+      "id": 4,
+      "name": "A5"
+    },
+    {
+      "id": 5,
+      "name": "A6"
+    },
+    {
+      "id": 6,
+      "name": "A7"
+    },
+    {
+      "id": 7,
+      "name": "A8"
+    },
+    {
+      "id": 8,
+      "name": "allroad"
+    },
+    {
+      "id": 9,
+      "name": "e-tron"
+    },
+    {
+      "id": 10,
+      "name": "Q2"
+    },
+    {
+      "id": 11,
+      "name": "Q3"
+    },
+    {
+      "id": 12,
+      "name": "Q5"
+    },
+    {
+      "id": 13,
+      "name": "Q7"
+    },
+    {
+      "id": 14,
+      "name": "Q8"
+    },
+    {
+      "id": 15,
+      "name": "R8"
+    },
+    {
+      "id": 16,
+      "name": "RS e-tron GT"
+    },
+    {
+      "id": 17,
+      "name": "RS3"
+    },
+    {
+      "id": 18,
+      "name": "RS4"
+    },
+    {
+      "id": 19,
+      "name": "RS5"
+    },
+    {
+      "id": 20,
+      "name": "RS6"
+    },
+    {
+      "id": 21,
+      "name": "RS7"
+    },
+    {
+      "id": 22,
+      "name": "RS Q3"
+    },
+    {
+      "id": 23,
+      "name": "RS Q8"
+    },
+    {
+      "id": 24,
+      "name": "S3"
+    },
+    {
+      "id": 25,
+      "name": "S4"
+    },
+    {
+      "id": 26,
+      "name": "S5"
+    },
+    {
+      "id": 27,
+      "name": "S6"
+    },
+    {
+      "id": 28,
+      "name": "S7"
+    },
+    {
+      "id": 29,
+      "name": "S8"
+    },
+    {
+      "id": 30,
+      "name": "SQ2"
+    },
+    {
+      "id": 31,
+      "name": "SQ5"
+    },
+    {
+      "id": 32,
+      "name": "SQ7"
+    },
+    {
+      "id": 33,
+      "name": "SQ8"
+    },
+    {
+      "id": 34,
+      "name": "TT"
+    },
+    {
+      "id": 35,
+      "name": "TT RS"
+    },
+    {
+      "id": 36,
+      "name": "TTS"
+    }
+  ],
+  "AllCarConditions": [
+    {
+      "id": 0,
+      "name": "AllCarConditions"
+    },
+    {
+      "id": 1,
+      "name": "Excellent"
+    },
+    {
+      "id": 2,
+      "name": "Good"
+    },
+    {
+      "id": 3,
+      "name": "Above Average"
+    },
+    {
+      "id": 4,
+      "name": "Average"
+    },
+    {
+      "id": 5,
+      "name": "Below Average"
+    },
+    {
+      "id": 6,
+      "name": "Poor"
+    }
+  ],
+  "States": [
+    {
+      "id": 0,
+      "name": "States"
+    },
+    {
+      "id": 1,
+      "name": "ACT"
+    },
+    {
+      "id": 2,
+      "name": "NSW"
+    },
+    {
+      "id": 3,
+      "name": "QLD"
+    },
+    {
+      "id": 4,
+      "name": "SA"
+    },
+    {
+      "id": 5,
+      "name": "VIC"
+    },
+    {
+      "id": 6,
+      "name": "WA"
+    }
+  ],
+  "CustomDate": [
+    {
+      "id": 0,
+      "name": "Custom Date"
+    },
+    {
+      "id": 1,
+      "name": "Last 7 days"
+    },
+    {
+      "id": 2,
+      "name": "Last 30 days"
+    },
+    {
+      "id": 3,
+      "name": "Last 60 days"
+    },
+    {
+      "id": 4,
+      "name": "Last 90 days"
+    }
+  ],
+  "SaleCategory": [
+    {
+      "id": 0,
+      "name": "Sale Category"
+    },
+    {
+      "id": 1,
+      "name": "Auction"
+    },
+    {
+      "id": 2,
+      "name": "Dealership"
+    },
+    {
+      "id": 3,
+      "name": "Fixed Price"
+    },
+    {
+      "id": 4,
+      "name": "Wholesale"
+    }
+  ],
+  "Badges": [
+    {
+      "id": 0,
+      "name": "Badges"
+    },
+    {
+      "id": 1,
+      "name": "(Blank)"
+    },
+    {
+      "id": 2,
+      "name": "30 TFSI"
+    },
+    {
+      "id": 3,
+      "name": "35 TFSI"
+    },
+    {
+      "id": 4,
+      "name": "40 TFSI S line"
+    },
+    {
+      "id": 5,
+      "name": "Ambition"
+    },
+    {
+      "id": 6,
+      "name": "Attraction"
+    },
+    {
+      "id": 7,
+      "name": "Sport"
+    },
+    {
+      "id": 8,
+      "name": "Sport style Edition"
+    }
+  ],
+  "BodyType": [
+    {
+      "id": 0,
+      "name": "Body Type"
+    },
+    {
+      "id": 1,
+      "name": "Hatchback"
+    }
+  ],
+  "BodyTypeConfig": [
+    {
+      "id": 1,
+      "name": "Body Type Config"
+    },
+    {
+      "id": 1,
+      "name": "(Blank)"
+    }
+  ],
+  "FuelType": [
+    {
+      "id": 0,
+      "name": "Fuel Type"
+    },
+    {
+      "id": 1,
+      "name": "Diesel"
+    },
+    {
+      "id": 2,
+      "name": "Petrol"
+    }
+  ],
+  "Transmission": [
+    {
+      "id": 0,
+      "name": "Transmission"
+    },
+    {
+      "id": 1,
+      "name": "Automatic"
+    },
+    {
+      "id": 2,
+      "name": "Manual"
+    }
+  ],
+  "Engine": [
+    {
+      "id": 0,
+      "name": "Engine"
+    },
+    {
+      "id": 1,
+      "name": "1.0"
+    },
+    {
+      "id": 2,
+      "name": "1.2"
+    },
+    {
+      "id": 3,
+      "name": "1.4"
+    },
+    {
+      "id": 4,
+      "name": "1.5"
+    },
+    {
+      "id": 5,
+      "name": "1.6"
+    },
+    {
+      "id": 6,
+      "name": "2.0"
+    }
+  ],
+  "Cylinders": [
+    {
+      "id": 0,
+      "name": "Cylinders"
+    },
+    {
+      "id": 1,
+      "name": "3"
+    },
+    {
+      "id": 2,
+      "name": "4"
+    }
+  ],
+  "Division": [
+    {
+      "id": 0,
+      "name": "Division"
+    },
+    {
+      "id": 1,
+      "name": "Motor Vehicles"
+    }
+  ],
+  "Drive": [
+    {
+      "id": 0,
+      "name": "Drive"
+    },
+    {
+      "id": 1,
+      "name": "Front Wheel Drive"
+    }
+  ],
+  "Seat": [
+    {
+      "id": 0,
+      "name": "Seat"
+    },
+    {
+      "id": 1,
+      "name": "4"
+    },
+    {
+      "id": 2,
+      "name": "5"
+    }
+  ],
+  "Doors": [
+    {
+      "id": 0,
+      "name": "Doors"
+    },
+    {
+      "id": 1,
+      "name": "3"
+    },
+    {
+      "id": 2,
+      "name": "5"
+    }
+  ],
+  "Year": [
+    {
+      "id": 0,
+      "name": "Year"
+    },
+    {
+      "id": 1,
+      "name": "1990 - 2000"
+    },
+    {
+      "id": 2,
+      "name": "2000 - 2010"
+    },
+    {
+      "id": 3,
+      "name": "2010 - 2020"
+    },
+    {
+      "id": 4,
+      "name": "2020 - 2030"
+    }
+  ],
+  "Odometer": [
+    {
+      "id": 0,
+      "name": "Odometer"
+    },
+    {
+      "id": 1,
+      "name": "0 - 5000 km"
+    },
+    {
+      "id": 2,
+      "name": "5000 - 20000 km"
+    },
+    {
+      "id": 3,
+      "name": "20000 - 50000 km"
+    },
+    {
+      "id": 4,
+      "name": "50000 -10000 km"
+    },
+    {
+      "id": 5,
+      "name": "100000-200000 km"
+    },
+    {
+      "id": 6,
+      "name": "200000-300000 km"
+    }
+  ]
+}

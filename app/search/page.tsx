@@ -9,19 +9,14 @@ import React, { useState, useEffect } from 'react';
 import { setDefaultMake, setDefaultModel } from '../types/interfaces';
 import { useFactorsState } from '../components/UseFactorsState';
 
-
-
 const url_prod = "https://api.helloai.ink/";
 const url_dev = "http://localhost:8080/";
 
 export default function Home() {
   const searchParams = useSearchParams()
 
-
-
   setDefaultMake(searchParams.get('make') || 'Audi');
   setDefaultModel(searchParams.get('model') || 'A5');
-
 
   const [make, setMake] = useFactorsState({ "id": 0, "name": searchParams.get('make') || 'Audi' });
   const [model, setModel] = useFactorsState({ "id": 0, "name": searchParams.get('model') || 'A5' });
@@ -45,32 +40,6 @@ export default function Home() {
   const [description, setDescription] = useState('');
   const [sort, setSort] = useFactorsState({ "id": 0, "name": '' });
   const [asc, setAsc] = useState('DESC');
-
-
-  useEffect(() => {
-    console.log(make);
-  }, [make]);
-
-  useEffect(() => {
-    console.log(model);
-  }, [model]);
-
-  useEffect(() => {
-    console.log(description);
-  }, [description]);
-
-  useEffect(() => {
-    console.log(doors);
-  }, [doors]);
-
-  useEffect(() => {
-    console.log(asc);
-  }, [asc]);
-
-  useEffect(() => {
-    console.log(sort);
-  }, [sort]);
-
 
   const [carData, setCarData] = useState(null);
   const [apply, setApply] = useState(0);
@@ -103,12 +72,11 @@ export default function Home() {
           asc: asc
         } as { [key: string]: string };
         const queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-        const response = await fetch(url_dev + `car?${queryString}`);
+        const response = await fetch(url_prod + `car?${queryString}`);
         if (!response.ok) {
           throw new Error('Failed to fetch car data');
         }
         const data = await response.json();
-        console.log("fetch used car sales data sucessfully");
         setCarData(data);
       } catch (error) {
         console.error('Error fetching car data:', error);
@@ -146,7 +114,7 @@ export default function Home() {
         setSort={setSort}
         setAsc={setAsc}
         carData={carData}
-        setApply = {setApply}
+        setApply={setApply}
       />
 
       <CarDetails carData={carData} />

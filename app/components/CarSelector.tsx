@@ -36,9 +36,7 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
     setSelected(newValue);
     setValue(newValue);
     if (jsonData[0].name == 'Abarth') {
-      console.log("The Make has been changed!", newValue.name);
       setFilters(AudiFilters);
-
       setModelValue(newValue.name);
 
       const defaultMake = newValue.name.toLowerCase();
@@ -54,7 +52,6 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
         setFilters(BentleyFilters);
       }
     }
-
   };
 
   const setDefaultValue = () => {
@@ -76,7 +73,6 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
   
   const [firstRender, setFirstRender] = useState(true); //Judge first time or vary triggering
   useEffect(() => {
-    console.log("getDefaultMake():", getDefaultMake());
     if (firstRender) {
       setFirstRender(false);
     } else {
