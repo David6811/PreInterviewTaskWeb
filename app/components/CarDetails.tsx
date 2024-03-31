@@ -38,7 +38,7 @@ export default function CarDetails({ carData }: CarDetailsProps) {
             case 'info':
                 return <TableInfo carData={carData}/>;
             case 'list':
-                return <TableList />;
+                return <TableList carData={carData}/>;
             default:
                 return null;
         }
