@@ -1,5 +1,24 @@
 // types.ts
 
+let defaultMakeInternal: string = "";
+let defaultModelInternal: string = "";
+
+export function getDefaultMake(): string {
+    return defaultMakeInternal;
+}
+
+export function setDefaultMake(newMake: string): void {
+    defaultMakeInternal = newMake;
+}
+
+export function getDefaultModel(): string {
+    return defaultModelInternal;
+}
+
+export function setDefaultModel(newModel: string): void {
+    defaultModelInternal = newModel;
+}
+
 export interface CarData {
     id: string;
     make: string;

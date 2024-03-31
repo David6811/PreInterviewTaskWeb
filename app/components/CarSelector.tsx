@@ -4,7 +4,7 @@ import { Factors } from '../types/interfaces';
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon, ChevronDownIcon, PlayIcon } from '@heroicons/react/20/solid'
-import React, {useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 type FactorsSetter = (newValue: { id: number; name: string }) => void;
 interface CarSelectorProps {
@@ -12,20 +12,26 @@ interface CarSelectorProps {
   defaultWidth: number;
   setSelected: FactorsSetter;
   triggerDefault: number;
+  defaultValue: string;
 }
+
 
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function CarSelector({ jsonData, defaultWidth, setSelected,triggerDefault }: CarSelectorProps) {
+export default function CarSelector({ jsonData, defaultWidth, setSelected, triggerDefault, defaultValue }: CarSelectorProps) {
 
   const [value, setValue] = useState(jsonData[0])
-  
+
   const handleOnChangeClick = (newValue: Factors) => {
     setSelected(newValue);
     setValue(newValue);
+    if (jsonData[0].name == 'Abarth') {
+      console.log("this is the make");
+    }
+
   };
 
   const setDefaultValue = () => {
@@ -35,6 +41,13 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected,trigge
   useEffect(() => {
     setDefaultValue();
   }, [triggerDefault]);
+
+  useEffect(() => {
+    if (defaultValue !== "" && defaultValue !== null) {
+      setValue({ id: 0, name: defaultValue });
+    }
+  }, []);
+
 
   return (
     <Listbox value={value} onChange={handleOnChangeClick} >
