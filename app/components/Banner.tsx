@@ -26,7 +26,8 @@ export default function Banner({
   setDoors,
   setDescription,
   setSort,
-  setAsc }: FactorsProps) {
+  setAsc, 
+  carData}: FactorsProps) {
   return (
     <div id="banner" className="flex justify-between items-center banner">
       <div></div>
@@ -54,7 +55,8 @@ export default function Banner({
           setDoors={setDoors}
           setDescription={setDescription}
           setSort={setSort} 
-          setAsc ={setAsc}/>
+          setAsc ={setAsc}
+          carData = {carData}/>
       </div>
       <div></div>
     </div>

@@ -136,6 +136,7 @@ export default function Home() {
         setDescription={setDescription}
         setSort={setSort}
         setAsc={setAsc}
+        carData={carData}
       />
 
       <CarDetails carData={carData} />
