@@ -1,6 +1,6 @@
 'use client'
 import './CarSelector.css'; // Import the CSS file
-import { Factors, setDefaultModel } from '../types/interfaces';
+import { Factors, getDefaultMake, setDefaultMake, setDefaultModel } from '../types/interfaces';
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon, ChevronDownIcon, PlayIcon } from '@heroicons/react/20/solid'
@@ -20,15 +20,15 @@ interface CarSelectorProps {
   triggerDefault: number;
   defaultValue: string;
   setFilters: React.Dispatch<React.SetStateAction<any>>;
+  modelValue: string;
+  setModelValue: React.Dispatch<React.SetStateAction<string>>;
 }
-
-
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function CarSelector({ jsonData, defaultWidth, setSelected, triggerDefault, defaultValue, setFilters }: CarSelectorProps) {
+export default function CarSelector({ jsonData, defaultWidth, setSelected, triggerDefault, defaultValue, setFilters, modelValue, setModelValue }: CarSelectorProps) {
 
   const [value, setValue] = useState(jsonData[0])
 
@@ -39,7 +39,7 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
       console.log("The Make has been changed!", newValue.name);
       setFilters(AudiFilters);
 
-
+      setModelValue(newValue.name);
 
       const defaultMake = newValue.name.toLowerCase();
       if (defaultMake === "abarth") {
@@ -53,7 +53,6 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
       } else if (defaultMake === "bentley") {
         setFilters(BentleyFilters);
       }
-
     }
 
   };
@@ -73,6 +72,19 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
       setValue({ id: 0, name: defaultValue });
     }
   }, []);
+
+  
+  const [firstRender, setFirstRender] = useState(true); //Judge first time or vary triggering
+  useEffect(() => {
+    console.log("getDefaultMake():", getDefaultMake());
+    if (firstRender) {
+      setFirstRender(false);
+    } else {
+      if (jsonData[0].name === 'Family') {
+        setDefaultValue();
+      }
+    }
+  }, [modelValue]);
 
 
   return (
