@@ -33,3 +33,37 @@ export interface CarData {
 export interface CarDetailsProps {
     carData: CarData[] | null; // It's an array of CarData or null
 }
+
+
+export interface Factors {
+    id: number;
+    name: string;
+}
+
+type FactorsSetter = (newValue: { id: number; name: string }) => void;
+
+export interface FactorsProps {
+    setMake: FactorsSetter;
+    setModel: FactorsSetter;
+    setYear: FactorsSetter;
+    setOdometer: FactorsSetter;
+    setVehicleCondition: FactorsSetter;
+    setStates: FactorsSetter;
+    setCustomDate: FactorsSetter;
+    setSaleCategory: FactorsSetter;
+    setBadges: FactorsSetter;
+    setBodyType: FactorsSetter;
+    setBodyTypeConfig: FactorsSetter;
+    setFuelType: FactorsSetter;
+    setTransmission: FactorsSetter;
+    setEngine: FactorsSetter;
+    setCylinders: FactorsSetter;
+    setDivision: FactorsSetter;
+    setDrive: FactorsSetter;
+    setSeat: FactorsSetter;
+    setDoors: FactorsSetter;
+    setDescription: React.Dispatch<React.SetStateAction<string>>;
+    setSort: FactorsSetter;
+    setAsc: React.Dispatch<React.SetStateAction<string>>;
+}
+

@@ -3,20 +3,20 @@ import './SortButton.css';
 
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon,PlayIcon } from '@heroicons/react/20/solid'
+import { CheckIcon, PlayIcon } from '@heroicons/react/20/solid'
 
 const sort = [
   {
-      id: 1,
-      name: 'Sort by Sale Date',
+    id: 1,
+    name: 'Sort by Sale Date',
   },
   {
-      id: 2,
-      name: 'Sort by Age',
+    id: 2,
+    name: 'Sort by Age',
   },
   {
-      id: 3,
-      name: 'Sort by Odometer',
+    id: 3,
+    name: 'Sort by Odometer',
   }
 ]
 
@@ -24,14 +24,21 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function SortButton() {
-  const [selected, setSelected] = useState(sort[0])
+type FactorsSetter = (newValue: { id: number; name: string }) => void;
+interface CarSelectorProps {
+  setSelected: FactorsSetter;
+}
+
+
+export default function SortButton({ setSelected }: CarSelectorProps) {
+
+  const selected = sort[0];
 
   return (
     <Listbox value={selected} onChange={setSelected} >
       <>
-      <div className="relative selectorContainor_Sort">
-          <Listbox.Button className="relative w-full bg-white py-1 pl-3 pr-10 text-left text-gray-900 listboxButton_Sort " style={{height:'50px'}}>
+        <div className="relative selectorContainor_Sort">
+          <Listbox.Button className="relative w-full bg-white py-1 pl-3 pr-10 text-left text-gray-900 listboxButton_Sort " style={{ height: '50px' }}>
             <span className="flex items-center">
               <span className="ml-3 block truncate">{selected.name}</span>
             </span>

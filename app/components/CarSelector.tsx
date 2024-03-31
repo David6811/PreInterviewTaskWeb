@@ -1,19 +1,16 @@
 'use client'
 import './CarSelector.css'; // Import the CSS file
-
+import { Factors } from '../types/interfaces';
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, ChevronUpDownIcon, ChevronDownIcon, PlayIcon} from '@heroicons/react/20/solid'
+import { CheckIcon, ChevronUpDownIcon, ChevronDownIcon, PlayIcon } from '@heroicons/react/20/solid'
 
 
-interface Factors {
-  id: number;
-  name: string;
-}
-
+type FactorsSetter = (newValue: { id: number; name: string }) => void;
 interface CarSelectorProps {
-  jsonData: Factors[]; 
+  jsonData: Factors[];
   defaultWidth: number;
+  setSelected: FactorsSetter;
 }
 
 
@@ -21,15 +18,18 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function CarSelector({ jsonData, defaultWidth }: CarSelectorProps) {
-  const [selected, setSelected] = useState(jsonData[0])
+export default function CarSelector({ jsonData, defaultWidth, setSelected }: CarSelectorProps) {
+
+  //const [selected, setSelected] = useState(jsonData[0])
+
+  const selected = jsonData[0];
 
   return (
     <Listbox value={selected} onChange={setSelected} >
       <>
 
 
-        <div className="flex1 relative selectorContainor  ${defaultWidth === 0 ? 'selectorContainor-1000 selectorContainor-960 selectorContainor-730 selectorContainor-560' : ''" style={{ width: defaultWidth !== 0 ? `${defaultWidth}px` : 'selectorContainor' }}  style={{height:'34px'}}>
+        <div className="flex1 relative selectorContainor  ${defaultWidth === 0 ? 'selectorContainor-1000 selectorContainor-960 selectorContainor-730 selectorContainor-560' : ''" style={{ width: defaultWidth !== 0 ? `${defaultWidth}px` : 'selectorContainor' }} style={{ height: '34px' }}>
           <Listbox.Button className="relative w-full bg-white py-1 pl-3 pr-10 text-left text-gray-900 listboxButton ">
             <span className="flex items-center">
               <span className="ml-1 block truncate">{selected.name}</span>
