@@ -31,16 +31,21 @@ interface CarSelectorProps {
 
 
 export default function SortButton({ setSelected }: CarSelectorProps) {
+  const [value, setValue] = useState(sort[0])
 
-  const selected = sort[0];
+  const handleOnChangeClick = (newValue: any) => {
+    setSelected(newValue);
+    setValue(newValue);
+  };
+
 
   return (
-    <Listbox value={selected} onChange={setSelected} >
+    <Listbox value={value} onChange={handleOnChangeClick} >
       <>
         <div className="relative selectorContainor_Sort">
           <Listbox.Button className="relative w-full bg-white py-1 pl-3 pr-10 text-left text-gray-900 listboxButton_Sort " style={{ height: '50px' }}>
             <span className="flex items-center">
-              <span className="ml-3 block truncate">{selected.name}</span>
+              <span className="ml-3 block truncate">{value.name}</span>
             </span>
             <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
               <PlayIcon className="h-3 w-3 mr-2 text-white text-gray-900 transform rotate-90" aria-hidden="true" />
