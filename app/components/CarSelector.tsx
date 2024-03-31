@@ -1,19 +1,17 @@
 'use client'
 import './CarSelector.css'; // Import the CSS file
-
+import { Factors } from '../types/interfaces';
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, ChevronUpDownIcon, ChevronDownIcon, PlayIcon} from '@heroicons/react/20/solid'
+import { CheckIcon, ChevronUpDownIcon, ChevronDownIcon, PlayIcon } from '@heroicons/react/20/solid'
+import React, {useEffect } from 'react';
 
-
-interface Factors {
-  id: number;
-  name: string;
-}
-
+type FactorsSetter = (newValue: { id: number; name: string }) => void;
 interface CarSelectorProps {
-  jsonData: Factors[]; 
+  jsonData: Factors[];
   defaultWidth: number;
+  setSelected: FactorsSetter;
+  triggerDefault: number;
 }
 
 
@@ -21,18 +19,30 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function CarSelector({ jsonData, defaultWidth }: CarSelectorProps) {
-  const [selected, setSelected] = useState(jsonData[0])
+export default function CarSelector({ jsonData, defaultWidth, setSelected,triggerDefault }: CarSelectorProps) {
+
+  const [value, setValue] = useState(jsonData[0])
+  
+  const handleOnChangeClick = (newValue: Factors) => {
+    setSelected(newValue);
+    setValue(newValue);
+  };
+
+  const setDefaultValue = () => {
+    setValue(jsonData[0]);
+  };
+
+  useEffect(() => {
+    setDefaultValue(); // 每次 forceUpdate 改变时重新加载组件
+  }, [triggerDefault]); // 监听 forceUpdate 的变化
 
   return (
-    <Listbox value={selected} onChange={setSelected} >
+    <Listbox value={value} onChange={handleOnChangeClick} >
       <>
-
-
-        <div className="flex1 relative selectorContainor  ${defaultWidth === 0 ? 'selectorContainor-1000 selectorContainor-960 selectorContainor-730 selectorContainor-560' : ''" style={{ width: defaultWidth !== 0 ? `${defaultWidth}px` : 'selectorContainor' }}  style={{height:'34px'}}>
+        <div className="flex1 relative selectorContainor  ${defaultWidth === 0 ? 'selectorContainor-1000 selectorContainor-960 selectorContainor-730 selectorContainor-560' : ''" style={{ width: defaultWidth !== 0 ? `${defaultWidth}px` : 'selectorContainor' }} style={{ height: '34px' }}>
           <Listbox.Button className="relative w-full bg-white py-1 pl-3 pr-10 text-left text-gray-900 listboxButton ">
             <span className="flex items-center">
-              <span className="ml-1 block truncate">{selected.name}</span>
+              <span className="ml-1 block truncate">{value.name}</span>
             </span>
             <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
               <PlayIcon className="h-2 w-2 mr-1 text-gray-900 transform rotate-90" aria-hidden="true" />

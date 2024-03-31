@@ -6,44 +6,142 @@ import Foot from "../components/Foot";
 import LoadMore from "../components/LoadMore";
 import { useSearchParams } from 'next/navigation'
 import React, { useState, useEffect } from 'react';
+import { Factors } from '../types/interfaces';
+import { useFactorsState } from '../components/UseFactorsState';
 
 const url_prod = "https://api.helloai.ink/";
 const url_dev = "http://localhost:8080/";
 
-  export default function Home() {
-    const searchParams = useSearchParams()
-    const make = searchParams.get('make') || 'Audi';
-    const model = searchParams.get('model') || 'A5';
+export default function Home() {
+  const searchParams = useSearchParams()
 
-    const [carData, setCarData] = useState(null);
+  const [make, setMake] = useFactorsState({ "id": 0, "name": searchParams.get('make') || 'Audi' });
+  const [model, setModel] = useFactorsState({ "id": 0, "name": searchParams.get('model') || 'A5' });
+  const [year, setYear] = useFactorsState({ "id": 0, "name": '' });
+  const [odometer, setOdometer] = useFactorsState({ "id": 0, "name": '' });
+  const [vehicleCondition, setVehicleCondition] = useFactorsState({ "id": 0, "name": '' });
+  const [states, setStates] = useFactorsState({ "id": 0, "name": '' });
+  const [customDate, setCustomDate] = useFactorsState({ "id": 0, "name": '' });
+  const [saleCategory, setSaleCategory] = useFactorsState({ "id": 0, "name": '' });
+  const [badges, setBadges] = useFactorsState({ "id": 0, "name": '' });
+  const [bodyType, setBodyType] = useFactorsState({ "id": 0, "name": '' });
+  const [bodyTypeConfig, setBodyTypeConfig] = useFactorsState({ "id": 0, "name": '' });
+  const [fuelType, setFuelType] = useFactorsState({ "id": 0, "name": '' });
+  const [transmission, setTransmission] = useFactorsState({ "id": 0, "name": '' });
+  const [engine, setEngine] = useFactorsState({ "id": 0, "name": '' });
+  const [cylinders, setCylinders] = useFactorsState({ "id": 0, "name": '' });
+  const [division, setDivision] = useFactorsState({ "id": 0, "name": '' });
+  const [drive, setDrive] = useFactorsState({ "id": 0, "name": '' });
+  const [seat, setSeat] = useFactorsState({ "id": 0, "name": '' });
+  const [doors, setDoors] = useFactorsState({ "id": 0, "name": '' });
+  const [description, setDescription] = useState('');
+  const [sort, setSort] = useFactorsState({ "id": 0, "name": '' });
+  const [asc, setAsc] = useState('DESC');
 
-    useEffect(() => {
-      const fetchCarData = async () => {
-        try {
-          const response = await fetch(url_dev + `car?maker=${make}&model=${model}&year=2016`);
-          if (!response.ok) {
-            throw new Error('Failed to fetch car data');
-          }
-          const data = await response.json();
-          console.log("fetch used car sales data sucessfully");
-          setCarData(data);
-        } catch (error) {
-          console.error('Error fetching car data:', error);
-          setCarData(null);
+
+  useEffect(() => {
+    console.log(make);
+  }, [make]);
+
+  useEffect(() => {
+    console.log(model);
+  }, [model]);
+
+  useEffect(() => {
+    console.log(description);
+  }, [description]);
+
+  useEffect(() => {
+    console.log(doors);
+  }, [doors]);
+
+  useEffect(() => {
+    console.log(asc);
+  }, [asc]);
+
+  useEffect(() => {
+    console.log(sort);
+  }, [sort]);
+
+
+  const [carData, setCarData] = useState(null);
+
+  useEffect(() => {
+    const fetchCarData = async () => {
+      try {
+        const params = {
+          maker: make.name,
+          model: model.name,
+          year: year.name,
+          odometer: odometer.name,
+          vehicleCondition: vehicleCondition.name,
+          states: states.name,
+          customDate: customDate.name,
+          saleCategory: saleCategory.name,
+          badges: badges.name,
+          bodyType: bodyType.name,
+          bodyTypeConfig: bodyTypeConfig.name,
+          fuelType: fuelType.name,
+          transmission: transmission.name,
+          engine: engine.name,
+          cylinders: cylinders.name,
+          division: division.name,
+          drive: drive.name,
+          seat: seat.name,
+          doors: doors.name,
+          description: description,
+          sort: sort.name,
+          asc: asc
+        } as { [key: string]: string };
+        const queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
+        const response = await fetch(url_dev + `car?${queryString}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch car data');
         }
-      };
+        const data = await response.json();
+        console.log("fetch used car sales data sucessfully");
+        setCarData(data);
+      } catch (error) {
+        console.error('Error fetching car data:', error);
+        setCarData(null);
+      }
+    };
 
-      fetchCarData();
-    }, []);
+    fetchCarData();
+  }, []);
 
 
-    return (
-      <div>
-        <Banner make={make} mode={model} />
-        <CarDetails carData={carData} />
-        <LoadMore />
-        <Estimate />
-        <Foot />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Banner
+        setMake={setMake}
+        setModel={setModel}
+        setYear={setYear}
+        setOdometer={setOdometer}
+        setVehicleCondition={setVehicleCondition}
+        setStates={setStates}
+        setCustomDate={setCustomDate}
+        setSaleCategory={setSaleCategory}
+        setBadges={setBadges}
+        setBodyType={setBodyType}
+        setBodyTypeConfig={setBodyTypeConfig}
+        setFuelType={setFuelType}
+        setTransmission={setTransmission}
+        setEngine={setEngine}
+        setCylinders={setCylinders}
+        setDivision={setDivision}
+        setDrive={setDrive}
+        setSeat={setSeat}
+        setDoors={setDoors}
+        setDescription={setDescription}
+        setSort={setSort}
+        setAsc={setAsc}
+      />
+
+      <CarDetails carData={carData} />
+      <LoadMore />
+      <Estimate />
+      <Foot />
+    </div>
+  );
+}
