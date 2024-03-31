@@ -34,7 +34,8 @@ export default function CarFilter({
     setDescription,
     setSort,
     setAsc,
-    carData }: FactorsProps) {
+    carData,
+    setApply}: FactorsProps) {
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         setDescription(event.target.value);
@@ -95,6 +96,10 @@ export default function CarFilter({
 
     const handleClearClick = () => {
         setTriggerDefault(Math.random);
+    };
+
+    const handleApplyClick = () => {
+        setApply(Math.random);
     };
 
     useEffect(() => {
@@ -237,7 +242,7 @@ export default function CarFilter({
                         </div>
                         <div></div>
                         <div className='flex justify-between items-right gap-3 flex1'>
-                            <button className='applyButton'>Apply</button>
+                            <button className='applyButton' onClick={() => handleApplyClick()}>Apply</button>
                             <button className='clearButton' onClick={() => handleClearClick()}>Clear</button>
                         </div>
                     </div>

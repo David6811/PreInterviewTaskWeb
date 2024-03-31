@@ -73,6 +73,7 @@ export default function Home() {
 
 
   const [carData, setCarData] = useState(null);
+  const [apply, setApply] = useState(0);
 
   useEffect(() => {
     const fetchCarData = async () => {
@@ -116,7 +117,7 @@ export default function Home() {
     };
 
     fetchCarData();
-  }, []);
+  }, [apply]);
 
 
   return (
@@ -145,8 +146,7 @@ export default function Home() {
         setSort={setSort}
         setAsc={setAsc}
         carData={carData}
-      // make = {make}
-      // model = {make}
+        setApply = {setApply}
       />
 
       <CarDetails carData={carData} />
