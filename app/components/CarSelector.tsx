@@ -1,10 +1,16 @@
 'use client'
 import './CarSelector.css'; // Import the CSS file
-import { Factors } from '../types/interfaces';
+import { Factors, setDefaultModel } from '../types/interfaces';
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon, ChevronDownIcon, PlayIcon } from '@heroicons/react/20/solid'
 import React, { useEffect } from 'react';
+import AbarthFilters from './service/AbarthFilters.json';
+import AlfaRomeoFilters from './service/AlfaRomeoFilters.json';
+import AudiFilters from './service/AudiFilters.json';
+import AustinFilters from './service/AustinFilters.json';
+import BentleyFilters from './service/BentleyFilters.json';
+
 
 type FactorsSetter = (newValue: { id: number; name: string }) => void;
 interface CarSelectorProps {
@@ -13,6 +19,7 @@ interface CarSelectorProps {
   setSelected: FactorsSetter;
   triggerDefault: number;
   defaultValue: string;
+  setFilters: React.Dispatch<React.SetStateAction<any>>;
 }
 
 
@@ -21,7 +28,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function CarSelector({ jsonData, defaultWidth, setSelected, triggerDefault, defaultValue }: CarSelectorProps) {
+export default function CarSelector({ jsonData, defaultWidth, setSelected, triggerDefault, defaultValue, setFilters }: CarSelectorProps) {
 
   const [value, setValue] = useState(jsonData[0])
 
@@ -29,7 +36,24 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
     setSelected(newValue);
     setValue(newValue);
     if (jsonData[0].name == 'Abarth') {
-      console.log("this is the make");
+      console.log("The Make has been changed!", newValue.name);
+      setFilters(AudiFilters);
+
+
+
+      const defaultMake = newValue.name.toLowerCase();
+      if (defaultMake === "abarth") {
+        setFilters(AbarthFilters);
+      } else if (defaultMake === "alfaromeo") {
+        setFilters(AlfaRomeoFilters);
+      } else if (defaultMake === "audi") {
+        setFilters(AudiFilters);
+      } else if (defaultMake === "austin") {
+        setFilters(AustinFilters);
+      } else if (defaultMake === "bentley") {
+        setFilters(BentleyFilters);
+      }
+
     }
 
   };
@@ -38,10 +62,12 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
     setValue(jsonData[0]);
   };
 
+  //Clear
   useEffect(() => {
     setDefaultValue();
   }, [triggerDefault]);
 
+  //For Make and Mode
   useEffect(() => {
     if (defaultValue !== "" && defaultValue !== null) {
       setValue({ id: 0, name: defaultValue });
