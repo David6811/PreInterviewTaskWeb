@@ -1,78 +1,86 @@
 import './TableInfo.css';
-export default function TableInfo() {
+import { CarData } from '../types/interfaces';
+import { formatSaleDateDate } from '../action/UsedCarSalesUtil';
+
+
+interface TableInfoProps {
+    carData: CarData[] | null; // Pass carData as prop
+}
+
+export default function TableInfo({ carData }: TableInfoProps) {
     return (
         <div className="h-full mx-auto px-8">
-            <div className='border-b border-gray-800'>
-                <div className="flex justify-between">
-                    <div>
+            {carData && carData.map((car: CarData, index: number) => (
+                <div key={index} className='border-b border-gray-800'>
+                    <div className="flex justify-between">
                         <div>
-                            <strong> <span>Audi</span> <span>A5</span> <span>2016</span></strong>
+                            <div>
+                                <strong><span>{car.make}</span> <span>{car.model}</span> <span>{car.year}</span></strong>
+                            </div>
+                            <div>
+                                {car.description}
+                            </div>
                         </div>
+
                         <div>
-                            8T MY16 S line plus Coupe 2dr S tronic 7sp quattro 2.0T
+                            <button className="subscribeButton">Subscribe to reveal price</button>
                         </div>
                     </div>
 
-                    <div>
-                        <button className="subscribeButton">Subscribe to reveal price</button>
+                    <div className='mb-3'>
+                        <div className="flex justify-left items-center">
+                            <div className="flex items-center mr-5">
+                                <div className="mr-1">
+                                    <div className="h-1 w-1 rounded-full bg-black"></div>
+                                </div>
+                                <div>{car.odometer}</div>
+                            </div>
+                            <div className="flex items-center mr-5">
+                                <div className="mr-1">
+                                    <div className="h-1 w-1 rounded-full bg-black"></div>
+                                </div>
+                                <div>{car.vehiclecondition}</div>
+                            </div>
+
+                            <div className="flex items-center mr-5">
+                                <div className="mr-1">
+                                    <div className="h-1 w-1 rounded-full bg-black"></div>
+                                </div>
+                                <div>{car.salelocation}</div>
+                            </div>
+
+                            <div className="flex items-center mr-5">
+                                <div className="mr-1">
+                                    <div className="h-1 w-1 rounded-full bg-black"></div>
+                                </div>
+                                <div>{car.salecategory}</div>
+                            </div>
+
+                            <div className="flex items-center mr-5">
+                                <div className="mr-1">
+                                    <div className="h-1 w-1 rounded-full bg-black"></div>
+                                </div>
+                                <div>{car.salvagevehicle}</div>
+                            </div>
+
+                            <div className="flex items-center mr-5">
+                                <div className="mr-1">
+                                    <div className="h-1 w-1 rounded-full bg-black"></div>
+                                </div>
+                                <div>{formatSaleDateDate(car.saledate)}</div>
+                            </div>
+
+                            <div className="flex items-center mr-5">
+                                <div className="mr-1">
+                                    <div className="h-1 w-1 rounded-full bg-black"></div>
+                                </div>
+                                <div> <a>More</a></div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-
-                <div className='mb-3'>
-                    <div className="flex justify-left items-center">
-                        <div className="flex items-center mr-5">
-                            <div className="mr-1">
-                                <div className="h-1 w-1 rounded-full bg-black"></div>
-                            </div>
-                            <div>82,640</div>
-                        </div>
-                        <div className="flex items-center mr-5">
-                            <div className="mr-1">
-                                <div className="h-1 w-1 rounded-full bg-black"></div>
-                            </div>
-                            <div>Above Average</div>
-                        </div>
-
-                        <div className="flex items-center mr-5">
-                            <div className="mr-1">
-                                <div className="h-1 w-1 rounded-full bg-black"></div>
-                            </div>
-                            <div>Southport (QLD)</div>
-                        </div>
-
-                        <div className="flex items-center mr-5">
-                            <div className="mr-1">
-                                <div className="h-1 w-1 rounded-full bg-black"></div>
-                            </div>
-                            <div>Dealership</div>
-                        </div>
-
-                        <div className="flex items-center mr-5">
-                            <div className="mr-1">
-                                <div className="h-1 w-1 rounded-full bg-black"></div>
-                            </div>
-                            <div>No</div>
-                        </div>
-
-                        <div className="flex items-center mr-5">
-                            <div className="mr-1">
-                                <div className="h-1 w-1 rounded-full bg-black"></div>
-                            </div>
-                            <div>Mar 2024</div>
-                        </div>
-
-                        <div className="flex items-center mr-5">
-                            <div className="mr-1">
-                                <div className="h-1 w-1 rounded-full bg-black"></div>
-                            </div>
-                            <div>  <a>More</a></div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+            ))}
         </div>
-
     );
-
 }

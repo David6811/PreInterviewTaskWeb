@@ -3,7 +3,11 @@ import CarFilter from './CarFilter';
 import Menu from './Menu';
 import UsedCarTitle from './UsedCarTitle';
 
-export default function Banner() {
+interface BannerProps {
+  make: string;
+  mode: string;
+}
+export default function Banner({ make, mode }: BannerProps) {
   return (
     <div id="banner" className="flex justify-between items-center banner">
       <div></div>

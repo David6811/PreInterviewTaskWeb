@@ -8,7 +8,7 @@ import Estimate from "./components/Estimate";
 export default function Home() {
   return (
     <div>
-      <Banner />
+      <Banner  make="" mode=""/>
       <CarDetails />
       <LoadMore />
       <Estimate />
