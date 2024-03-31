@@ -13,6 +13,8 @@ const url_prod = "https://api.helloai.ink/";
 const url_dev = "http://localhost:8080/";
 
 export default function Home() {
+  const [isVisible, setIsVisible] = useState(false); 
+
   const searchParams = useSearchParams()
 
   setDefaultMake(searchParams.get('make') || 'Audi');
@@ -72,12 +74,13 @@ export default function Home() {
           asc: asc
         } as { [key: string]: string };
         const queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-        const response = await fetch(url_prod + `car?${queryString}`);
+        const response = await fetch(url_dev + `car?${queryString}`);
         if (!response.ok) {
           throw new Error('Failed to fetch car data');
         }
         const data = await response.json();
         setCarData(data);
+        if(data.length>=3) setIsVisible(true);
       } catch (error) {
         console.error('Error fetching car data:', error);
         setCarData(null);
@@ -118,7 +121,7 @@ export default function Home() {
       />
 
       <CarDetails carData={carData} />
-      <LoadMore />
+      {isVisible && <LoadMore  />}
       <Estimate />
       <Foot />
     </div>
