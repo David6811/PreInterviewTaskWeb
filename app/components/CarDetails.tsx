@@ -6,7 +6,6 @@ import TableInfo from './TableInfo';
 import TableList from './TableList';
 import { CarData, CarDetailsProps } from '../types/interfaces';
 
-
 export default function CarDetails({ carData }: CarDetailsProps) {
     const [activeComponent, setActiveComponent] = useState<'normal' | 'info' | 'list' | null>(null);
 
@@ -26,17 +25,16 @@ export default function CarDetails({ carData }: CarDetailsProps) {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    useEffect(() => {
-        console.log("Used car sales data in CarDetails: ", carData);
-    }, [carData]);
+    // useEffect(() => {
+    //     console.log("Used car sales data in CarDetails");
+    // }, [carData]);
 
 
 
     const renderComponent = () => {
         switch (activeComponent) {
             case 'normal':
-                console.log("TableNormal: ", carData);
-                return <TableNormal />;
+                return <TableNormal carData={carData}/>;
             case 'info':
                 return <TableInfo />;
             case 'list':
