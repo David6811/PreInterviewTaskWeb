@@ -4,8 +4,10 @@ import React, { useState, useEffect } from 'react';
 import TableNormal from './TableNormal';
 import TableInfo from './TableInfo';
 import TableList from './TableList';
+import { CarData, CarDetailsProps } from '../types/interfaces';
 
-export default function CarDetails() {
+
+export default function CarDetails({ carData }: CarDetailsProps) {
     const [activeComponent, setActiveComponent] = useState<'normal' | 'info' | 'list' | null>(null);
 
     useEffect(() => {
@@ -19,16 +21,21 @@ export default function CarDetails() {
                 setActiveComponent('normal');
             }
         };
-
         handleResize();
-
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    useEffect(() => {
+        console.log("Used car sales data in CarDetails: ", carData);
+    }, [carData]);
+
+
+
     const renderComponent = () => {
         switch (activeComponent) {
             case 'normal':
+                console.log("TableNormal: ", carData);
                 return <TableNormal />;
             case 'info':
                 return <TableInfo />;
