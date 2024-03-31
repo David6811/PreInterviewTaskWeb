@@ -33,8 +33,8 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected,trigge
   };
 
   useEffect(() => {
-    setDefaultValue(); // 每次 forceUpdate 改变时重新加载组件
-  }, [triggerDefault]); // 监听 forceUpdate 的变化
+    setDefaultValue();
+  }, [triggerDefault]);
 
   return (
     <Listbox value={value} onChange={handleOnChangeClick} >
