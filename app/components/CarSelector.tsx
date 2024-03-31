@@ -4,13 +4,14 @@ import { Factors } from '../types/interfaces';
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon, ChevronDownIcon, PlayIcon } from '@heroicons/react/20/solid'
-
+import React, {useEffect } from 'react';
 
 type FactorsSetter = (newValue: { id: number; name: string }) => void;
 interface CarSelectorProps {
   jsonData: Factors[];
   defaultWidth: number;
   setSelected: FactorsSetter;
+  triggerDefault: number;
 }
 
 
@@ -18,15 +19,22 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function CarSelector({ jsonData, defaultWidth, setSelected }: CarSelectorProps) {
+export default function CarSelector({ jsonData, defaultWidth, setSelected,triggerDefault }: CarSelectorProps) {
 
   const [value, setValue] = useState(jsonData[0])
   
-  const handleOnChangeClick = (newValue: any) => {
+  const handleOnChangeClick = (newValue: Factors) => {
     setSelected(newValue);
     setValue(newValue);
   };
 
+  const setDefaultValue = () => {
+    setValue(jsonData[0]);
+  };
+
+  useEffect(() => {
+    setDefaultValue(); // 每次 forceUpdate 改变时重新加载组件
+  }, [triggerDefault]); // 监听 forceUpdate 的变化
 
   return (
     <Listbox value={value} onChange={handleOnChangeClick} >

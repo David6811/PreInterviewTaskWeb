@@ -63,7 +63,10 @@ export default function CarFilter({
     ]
 
     const [showMoreFilters, setShowMoreFilters] = useState(false); // State to track whether to show more filters
+    const [triggerDefault, setTriggerDefault] = useState(0); // State to track whether to show more filters
 
+
+    
 
     const ascButtonRef = useRef<HTMLButtonElement>(null);
     const descButtonRef = useRef<HTMLButtonElement>(null);
@@ -88,6 +91,10 @@ export default function CarFilter({
         }
     };
 
+    const handleClearClick = () => {
+        setTriggerDefault(Math.random);
+    };
+
 
     const filters = AbarthFilters;
     return (
@@ -96,28 +103,28 @@ export default function CarFilter({
                 <div className='carInnerContainner'>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1 mt-3">
                         <div className="flex justify-center">
-                            <CarSelector jsonData={Makes} defaultWidth={0} setSelected={setMake} />
+                            <CarSelector jsonData={Makes} defaultWidth={0} setSelected={setMake} triggerDefault = {triggerDefault}/>
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector jsonData={filters.Family} defaultWidth={0} setSelected={setModel} />
+                            <CarSelector jsonData={filters.Family} defaultWidth={0} setSelected={setMake} triggerDefault = {triggerDefault} />
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector jsonData={Makes} defaultWidth={0} setSelected={setYear} />
+                            <CarSelector jsonData={Makes} defaultWidth={0} setSelected={setYear} triggerDefault = {triggerDefault}/>
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector jsonData={Makes} defaultWidth={0} setSelected={setOdometer} />
+                            <CarSelector jsonData={Makes} defaultWidth={0} setSelected={setOdometer} triggerDefault = {triggerDefault}/>
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector jsonData={filters.AllCarConditions} defaultWidth={0} setSelected={setVehicleCondition} />
+                            <CarSelector jsonData={filters.AllCarConditions} defaultWidth={0} setSelected={setVehicleCondition} triggerDefault = {triggerDefault}/>
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector jsonData={filters.States} defaultWidth={0} setSelected={setStates} />
+                            <CarSelector jsonData={filters.States} defaultWidth={0} setSelected={setStates} triggerDefault = {triggerDefault}/>
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector jsonData={filters.CustomDate} defaultWidth={0} setSelected={setCustomDate} />
+                            <CarSelector jsonData={filters.CustomDate} defaultWidth={0} setSelected={setCustomDate} triggerDefault = {triggerDefault}/>
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector jsonData={filters.SaleCategory} defaultWidth={0} setSelected={setSaleCategory} />
+                            <CarSelector jsonData={filters.SaleCategory} defaultWidth={0} setSelected={setSaleCategory} triggerDefault = {triggerDefault}/>
                         </div>
                     </div>
                 </div>
@@ -125,37 +132,37 @@ export default function CarFilter({
                 <div id="moreFilter" className={`moreCarInnerContainner ${showMoreFilters ? '' : 'hidden'}`}>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1">
                         <div className="flex justify-center">
-                            <CarSelector jsonData={filters.Badges} defaultWidth={0} setSelected={setBadges} />
+                            <CarSelector jsonData={filters.Badges} defaultWidth={0} setSelected={setBadges} triggerDefault = {triggerDefault}/>
                         </div>
                         <div className="flex justify-center">
-                            <CarSelector jsonData={filters.BodyType} defaultWidth={0} setSelected={setBodyType} />
-                        </div>
-
-                        <div className="flex justify-center">
-                            <CarSelector jsonData={filters.BodyTypeConfig} defaultWidth={0} setSelected={setBodyTypeConfig} />
-                        </div>
-                        <div className="flex justify-center">
-                            <CarSelector jsonData={filters.FuelType} defaultWidth={0} setSelected={setFuelType} />
-                        </div>
-                        <div className="flex justify-center">
-                            <CarSelector jsonData={filters.Transmission} defaultWidth={0} setSelected={setTransmission} />
-                        </div>
-                        <div className="flex justify-center">
-                            <CarSelector jsonData={filters.Engine} defaultWidth={0} setSelected={setEngine} />
-                        </div>
-                        <div className="flex justify-center">
-                            <CarSelector jsonData={filters.Cylinders} defaultWidth={0} setSelected={setCylinders} />
-                        </div>
-                        <div className="flex justify-center">
-                            <CarSelector jsonData={filters.Division} defaultWidth={0} setSelected={setDivision} />
+                            <CarSelector jsonData={filters.BodyType} defaultWidth={0} setSelected={setBodyType} triggerDefault = {triggerDefault}/>
                         </div>
 
                         <div className="flex justify-center">
-                            <CarSelector jsonData={filters.Drive} defaultWidth={0} setSelected={setDrive} />
+                            <CarSelector jsonData={filters.BodyTypeConfig} defaultWidth={0} setSelected={setBodyTypeConfig} triggerDefault = {triggerDefault}/>
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector jsonData={filters.FuelType} defaultWidth={0} setSelected={setFuelType} triggerDefault = {triggerDefault}/>
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector jsonData={filters.Transmission} defaultWidth={0} setSelected={setTransmission} triggerDefault = {triggerDefault}/>
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector jsonData={filters.Engine} defaultWidth={0} setSelected={setEngine} triggerDefault = {triggerDefault}/>
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector jsonData={filters.Cylinders} defaultWidth={0} setSelected={setCylinders} triggerDefault = {triggerDefault}/>
+                        </div>
+                        <div className="flex justify-center">
+                            <CarSelector jsonData={filters.Division} defaultWidth={0} setSelected={setDivision} triggerDefault = {triggerDefault}/>
+                        </div>
+
+                        <div className="flex justify-center">
+                            <CarSelector jsonData={filters.Drive} defaultWidth={0} setSelected={setDrive} triggerDefault = {triggerDefault}/>
                         </div>
                         <div className="flex justify-center gap-2">
-                            <CarSelector jsonData={filters.Seat} defaultWidth={108} setSelected={setSeat} />
-                            <CarSelector jsonData={filters.Doors} defaultWidth={108} setSelected={setDoors} />
+                            <CarSelector jsonData={filters.Seat} defaultWidth={108} setSelected={setSeat} triggerDefault = {triggerDefault}/>
+                            <CarSelector jsonData={filters.Doors} defaultWidth={108} setSelected={setDoors} triggerDefault = {triggerDefault}/>
                         </div>
 
                         <div className="ml-2">
@@ -175,7 +182,7 @@ export default function CarFilter({
                         <div></div>
                         <div className='flex justify-between items-right gap-3 flex1'>
                             <button className='applyButton'>Apply</button>
-                            <button className='clearButton'>Clear</button>
+                            <button className='clearButton' onClick={() => handleClearClick()}>Clear</button>
                         </div>
                     </div>
                 </div>
