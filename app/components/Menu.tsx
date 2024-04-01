@@ -18,7 +18,7 @@ export default function Menu() {
                 <button className='ml-8'>More</button>
             </div>
             <div className='flex justify-between items-center mt-6 min-960'>
-                <Image src={user} alt="" width={36} height={36} className='hover:cursor-pointer'/>
+                <Image src={user} alt="" width={36} height={36} className='hover:cursor-pointer' />
                 <Image src={list} alt="" width={42} height={42} className='mt-1 ml-5 list-xl hover:cursor-pointer list-960' />
             </div>
         </div>
