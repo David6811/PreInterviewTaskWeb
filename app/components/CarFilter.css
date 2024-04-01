@@ -1,22 +1,22 @@
-.carFilterContainer{
+.carFilterContainer {
     background-color: #d7d8da;
     border-radius: 15px;
 }
 
-.carInnerContainner{
+.carInnerContainner {
     padding: 5px 5px;
 }
 
-.moreCarInnerContainner{
+.moreCarInnerContainner {
     padding: 0px 5px;
 }
 
 
-.carControllerInnerContainner{
+.carControllerInnerContainner {
     padding: 10px 15px;
 }
 
-.showMoreLink{
+.showMoreLink {
     color: black;
     text-decoration: underline;
 }
@@ -29,23 +29,24 @@
     font-size: 14px;
     font-family: sans-serif;
     font-weight: 100;
-    padding: 0 15px; 
+    padding: 0 15px;
 }
 
 
 .descriptionInput:focus {
-    outline: none; /* Remove outline on focus */
+    outline: none;
+    /* Remove outline on focus */
 }
 
 
-.applyButton{
+.applyButton {
     width: 190px;
     height: 37px;
     background-color: black;
     border-radius: 25px;
 }
 
-.clearButton{
+.clearButton {
     color: black;
     border: 1px solid #1d1d1e;
     width: 190px;
@@ -54,12 +55,12 @@
     border-radius: 25px;
 }
 
-.filterStatistics{
+.filterStatistics {
     font-size: 16px;
     font-weight: 300;
 }
 
-.sortButton{
+.sortButton {
     border: 1px solid #737d84;
     width: 200px;
     height: 50px;
@@ -67,7 +68,7 @@
     border-radius: 25px;
 }
 
-.ascButton{
+.ascButton {
     border-top-left-radius: 60%;
     border-bottom-left-radius: 60%;
     border-right: none;
@@ -77,7 +78,7 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
-.descButton{
+.descButton {
     border-top-right-radius: 60%;
     border-bottom-right-radius: 60%;
     border: 1px solid #aaa;
@@ -87,7 +88,7 @@
     background-color: #737d84;
 }
 
-.flex1{
+.flex1 {
     flex: 1;
 }
 
@@ -102,4 +103,3 @@
 /* *{
     border: 1px solid white;
 } */
-

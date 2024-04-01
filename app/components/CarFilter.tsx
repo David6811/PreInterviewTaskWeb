@@ -10,7 +10,6 @@ import AustinFilters from './service/AustinFilters.json';
 import BentleyFilters from './service/BentleyFilters.json';
 import { Factors, FactorsProps, CarData, getDefaultMake, getDefaultModel, setDefaultModel } from '../types/interfaces';
 
-
 export default function CarFilter({
     setMake,
     setModel,
@@ -73,8 +72,6 @@ export default function CarFilter({
     const [recordCount, setRecordCount] = useState<number>(0);
     const [averageKM, setAverageKM] = useState<string>("0");
     const [averageAge, setAverageAge] = useState<number>(0);
-
-
 
     const ascButtonRef = useRef<HTMLButtonElement>(null);
     const descButtonRef = useRef<HTMLButtonElement>(null);
@@ -247,7 +244,6 @@ export default function CarFilter({
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div >
@@ -270,7 +266,6 @@ export default function CarFilter({
 
                 </div>
             </div>
-
         </div>
     );
 }

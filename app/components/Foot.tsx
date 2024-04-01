@@ -5,7 +5,7 @@ export default function Foot() {
         <div className='FootContainor flex justify-between items-center'>
             <div></div>
             <div className=''>
-                © 2023 xxx Pty Limited |
+                © 2024 xxx Pty Limited |
                 <a href='https://pricespeoplepay.com.au/terms-condition'>Terms & Conditions</a> |
                 <a href='https://pricespeoplepay.com.au/privacy-policy'>Privacy Policy</a>
             </div>

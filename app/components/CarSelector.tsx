@@ -50,7 +50,7 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
         setFilters(AustinFilters);
       } else if (defaultMake === "bentley") {
         setFilters(BentleyFilters);
-      } else if(defaultMake === "make"){
+      } else if (defaultMake === "make") {
 
       }
     }
@@ -72,7 +72,7 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
     }
   }, []);
 
-  
+
   const [firstRender, setFirstRender] = useState(true); //Judge first time or vary triggering
   useEffect(() => {
     if (firstRender) {
