@@ -8,21 +8,21 @@ import { useSearchParams } from 'next/navigation'
 import React, { useState, useEffect } from 'react';
 import { setDefaultMake, setDefaultModel } from '../types/interfaces';
 import { useFactorsState } from '../components/UseFactorsState';
+import Head from 'next/head';
+
+
 
 const url_prod = "https://api.helloai.ink/";
 const url_dev = "http://localhost:8080/";
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(false); 
+  const [isVisible, setIsVisible] = useState(false);
 
   const searchParams = useSearchParams()
 
   setDefaultMake(searchParams.get('make') || 'Audi');
   setDefaultModel(searchParams.get('model') || 'A5');
 
-  useEffect(() => {
-    document.title = `${searchParams.get('make') || 'Audi'} ${searchParams.get('model') || 'A5'} | How Much They Sold For in Australia`;
-  }, []);
 
   const [make, setMake] = useFactorsState({ "id": 0, "name": searchParams.get('make') || 'Audi' });
   const [model, setModel] = useFactorsState({ "id": 0, "name": searchParams.get('model') || 'A5' });
@@ -44,11 +44,16 @@ export default function Home() {
   const [seat, setSeat] = useFactorsState({ "id": 0, "name": '' });
   const [doors, setDoors] = useFactorsState({ "id": 0, "name": '' });
   const [description, setDescription] = useState('');
-  const [sort, setSort] = useFactorsState({ "id": 0, "name": '' });
+  const [sort, setSort] = useFactorsState({ "id": 0, "name": 'Sort by Sale Date' });
   const [asc, setAsc] = useState('DESC');
 
   const [carData, setCarData] = useState(null);
   const [apply, setApply] = useState(0);
+
+  useEffect(() => {
+    document.title = `${make.name || 'Audi'} ${ model.name || 'A5'} | How Much They Sold For in Australia`;
+  }, [make, model]);
+
 
   useEffect(() => {
     const fetchCarData = async () => {
@@ -84,7 +89,7 @@ export default function Home() {
         }
         const data = await response.json();
         setCarData(data);
-        if(data.length>=3) setIsVisible(true);
+        if (data.length >= 3) setIsVisible(true);
       } catch (error) {
         console.error('Error fetching car data:', error);
         setCarData(null);
@@ -97,6 +102,12 @@ export default function Home() {
 
   return (
     <div>
+      <Head>
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
+      </Head>
       <Banner
         setMake={setMake}
         setModel={setModel}
@@ -125,7 +136,7 @@ export default function Home() {
       />
 
       <CarDetails carData={carData} />
-      {isVisible && <LoadMore  />}
+      {isVisible && <LoadMore />}
       <Estimate />
       <Foot />
     </div>
