@@ -88,7 +88,7 @@ export default function Home() {
           throw new Error('Failed to fetch car data');
         }
         const data = await response.json();
-        setCarData(data);
+        setCarData(data.data);
         if (data.length >= 3) setIsVisible(true);
       } catch (error) {
         console.error('Error fetching car data:', error);
