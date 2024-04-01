@@ -42,7 +42,7 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
       const defaultMake = newValue.name.toLowerCase();
       if (defaultMake === "abarth") {
         setFilters(AbarthFilters);
-      } else if (defaultMake === "alfaromeo") {
+      } else if (defaultMake === "alfa romeo") {
         setFilters(AlfaRomeoFilters);
       } else if (defaultMake === "audi") {
         setFilters(AudiFilters);
