@@ -99,6 +99,9 @@ export default function CarFilter({
     };
 
     const handleClearClick = () => {
+        setMake({ id: 0, name: "Make" });
+        setModel({ id: 0, name: "Family" });
+        setApply(Math.random);
         setTriggerDefault(Math.random);
     };
 

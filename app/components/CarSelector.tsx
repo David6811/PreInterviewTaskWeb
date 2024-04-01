@@ -65,9 +65,9 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
     setDefaultValue();
   }, [triggerDefault]);
 
-  //For Make and Mode
+  //For Make and Mode have a default value getting by URL
   useEffect(() => {
-    if (defaultValue !== "" && defaultValue !== null) {
+    if (defaultValue !== "") {
       setValue({ id: 0, name: defaultValue });
     }
   }, []);
