@@ -35,7 +35,8 @@ export default function CarFilter({
     setSort,
     setAsc,
     carData,
-    setApply }: FactorsProps) {
+    setApply,
+    setVisibleCount }: FactorsProps) {
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         setDescription(event.target.value);
@@ -109,6 +110,7 @@ export default function CarFilter({
     };
 
     const handleApplyClick = () => {
+        setVisibleCount(3);
         setApply(Math.random);
     };
 

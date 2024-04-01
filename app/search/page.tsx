@@ -10,8 +10,6 @@ import { setDefaultMake, setDefaultModel } from '../types/interfaces';
 import { useFactorsState } from '../components/UseFactorsState';
 import Head from 'next/head';
 
-
-
 const url_prod = "https://api.helloai.ink/";
 const url_dev = "http://localhost:8080/";
 
@@ -22,6 +20,13 @@ export default function Home() {
 
   setDefaultMake(searchParams.get('make') || 'Audi');
   setDefaultModel(searchParams.get('model') || 'A5');
+
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  // 在 LoadMore 组件点击时，增加显示数据的数量
+  const handleLoadMore = () => {
+    setVisibleCount(prevCount => prevCount + 3); // 每次增加3个
+  };
 
 
   const [make, setMake] = useFactorsState({ "id": 0, "name": searchParams.get('make') || 'Audi' });
@@ -47,15 +52,16 @@ export default function Home() {
   const [sort, setSort] = useFactorsState({ "id": 0, "name": 'Sort by Sale Date' });
   const [asc, setAsc] = useState('DESC');
 
-  const [carData, setCarData] = useState(null);
+  const [carData, setCarData] = useState([]); // 将初始状态值设为空数组
   const [apply, setApply] = useState(0);
 
   useEffect(() => {
-    document.title = `${make.name || 'Audi'} ${ model.name || 'A5'} | How Much They Sold For in Australia`;
+    document.title = `${make.name || 'Audi'} ${model.name || 'A5'} | How Much They Sold For in Australia`;
   }, [make, model]);
 
 
   useEffect(() => {
+    setIsVisible(false);
     const fetchCarData = async () => {
       try {
         const params = {
@@ -89,10 +95,10 @@ export default function Home() {
         }
         const data = await response.json();
         setCarData(data.data);
-        if (data.length >= 3) setIsVisible(true);
+        if (data.data.length >= 3) setIsVisible(true);
       } catch (error) {
         console.error('Error fetching car data:', error);
-        setCarData(null);
+        setCarData([]);
       }
     };
 
@@ -133,10 +139,11 @@ export default function Home() {
         setAsc={setAsc}
         carData={carData}
         setApply={setApply}
+        setVisibleCount = {setVisibleCount}
       />
+      <CarDetails carData={carData?.slice(0, visibleCount)} /> 
 
-      <CarDetails carData={carData} />
-      {isVisible && <LoadMore />}
+      {isVisible && <LoadMore onLoadMore={handleLoadMore}/>}
       <Estimate />
       <Foot />
     </div>
