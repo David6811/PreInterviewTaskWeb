@@ -9,10 +9,10 @@ interface TableInfoProps {
 
 export default function TableInfo({ carData }: TableInfoProps) {
     return (
-        <div className="h-full mx-auto px-8">
+        <div className="h-full mx-auto px-5">
             {carData && carData.map((car: CarData, index: number) => (
-                <div key={index} className='border-b border-gray-800'>
-                    <div className="flex justify-between">
+                <div key={index} className='border-b border-gray-800 mt-3'>
+                    <div className="flex justify-between items-center">
                         <div>
                             <div>
                                 <strong><span>{car.make}</span> <span>{car.model}</span> <span>{car.year}</span></strong>
@@ -22,12 +22,12 @@ export default function TableInfo({ carData }: TableInfoProps) {
                             </div>
                         </div>
 
-                        <div>
+                        <div className="bottom">
                             <button className="subscribeButton">Subscribe to reveal price</button>
                         </div>
                     </div>
 
-                    <div className='mb-3'>
+                    <div className='mb-3 mt-2'>
                         <div className="flex justify-left items-center">
                             <div className="flex items-center mr-5">
                                 <div className="mr-1">

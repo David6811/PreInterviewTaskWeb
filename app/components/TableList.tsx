@@ -10,10 +10,10 @@ export default function TableList({ carData }: TableListProps) {
         <div className="h-full mx-auto px-8">
             {carData && carData.map((car: CarData, index: number) => (
                 <div key={index}>
-                    <div>
+                    <div className='mt-3'>
                         <strong> <span>{car.make}</span> <span>{car.model}</span> <span>{car.year}</span></strong>
                     </div>
-                    <div>
+                    <div className='mt-2'>
                         {car.description}
                     </div>
 
