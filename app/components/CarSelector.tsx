@@ -35,14 +35,14 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
   const handleOnChangeClick = (newValue: Factors) => {
     setSelected(newValue);
     setValue(newValue);
-    if (jsonData[0].name == 'Abarth') {
+    if (jsonData[0].name == 'Make') {
       setFilters(AudiFilters);
       setModelValue(newValue.name);
 
       const defaultMake = newValue.name.toLowerCase();
       if (defaultMake === "abarth") {
         setFilters(AbarthFilters);
-      } else if (defaultMake === "alfaromeo") {
+      } else if (defaultMake === "alfa romeo") {
         setFilters(AlfaRomeoFilters);
       } else if (defaultMake === "audi") {
         setFilters(AudiFilters);
@@ -50,6 +50,8 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
         setFilters(AustinFilters);
       } else if (defaultMake === "bentley") {
         setFilters(BentleyFilters);
+      } else if(defaultMake === "make"){
+
       }
     }
   };
@@ -63,9 +65,9 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
     setDefaultValue();
   }, [triggerDefault]);
 
-  //For Make and Mode
+  //For Make and Mode have a default value getting by URL
   useEffect(() => {
-    if (defaultValue !== "" && defaultValue !== null) {
+    if (defaultValue !== "") {
       setValue({ id: 0, name: defaultValue });
     }
   }, []);

@@ -84,7 +84,8 @@ export interface FactorsProps {
     setDescription: React.Dispatch<React.SetStateAction<string>>;
     setSort: FactorsSetter;
     setAsc: React.Dispatch<React.SetStateAction<string>>;
-    carData: CarData | null; 
+    carData: CarData[] | null; 
     setApply: React.Dispatch<React.SetStateAction<number>>;
+    setVisibleCount: React.Dispatch<React.SetStateAction<number>>;
 }
 

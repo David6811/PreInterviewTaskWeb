@@ -5,6 +5,7 @@ import TableNormal from './TableNormal';
 import TableInfo from './TableInfo';
 import TableList from './TableList';
 import { CarData, CarDetailsProps } from '../types/interfaces';
+import Loading from './LoadingSpinner';
 
 export default function CarDetails({ carData }: CarDetailsProps) {
     const [activeComponent, setActiveComponent] = useState<'normal' | 'info' | 'list' | null>(null);
@@ -34,11 +35,11 @@ export default function CarDetails({ carData }: CarDetailsProps) {
     const renderComponent = () => {
         switch (activeComponent) {
             case 'normal':
-                return <TableNormal carData={carData}/>;
+                return carData ? <TableNormal carData={carData} /> : <div className='flex justify-center'><Loading /></div>;
             case 'info':
-                return <TableInfo carData={carData}/>;
+                return carData ? <TableInfo carData={carData} /> : <div className='flex justify-center'><Loading /></div>;
             case 'list':
-                return <TableList carData={carData}/>;
+                return carData ? <TableList carData={carData} /> : <div className='flex justify-center'><Loading /></div>;
             default:
                 return null;
         }

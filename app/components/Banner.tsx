@@ -28,7 +28,8 @@ export default function Banner({
   setSort,
   setAsc, 
   carData,
-  setApply}: FactorsProps) {
+  setApply,
+  setVisibleCount}: FactorsProps) {
   return (
     <div id="banner" className="flex justify-between items-center banner">
       <div></div>
@@ -58,7 +59,8 @@ export default function Banner({
           setSort={setSort} 
           setAsc ={setAsc}
           carData = {carData}
-          setApply = {setApply}/>
+          setApply = {setApply}
+          setVisibleCount ={setVisibleCount}/>
       </div>
       <div></div>
     </div>

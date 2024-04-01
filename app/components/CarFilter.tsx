@@ -35,12 +35,17 @@ export default function CarFilter({
     setSort,
     setAsc,
     carData,
-    setApply }: FactorsProps) {
+    setApply,
+    setVisibleCount }: FactorsProps) {
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         setDescription(event.target.value);
     };
     const Makes = [
+        {
+            id: 0,
+            name: 'Make',
+        },
         {
             id: 1,
             name: 'Abarth',
@@ -95,10 +100,17 @@ export default function CarFilter({
     };
 
     const handleClearClick = () => {
+        setMake({ id: 0, name: "Make" });
+        setModel({ id: 0, name: "Family" });
+        setRecordCount(0);
+        setAverageAge(0);
+        setAverageKM("0");
+        setApply(Math.random);
         setTriggerDefault(Math.random);
     };
 
     const handleApplyClick = () => {
+        setVisibleCount(3);
         setApply(Math.random);
     };
 

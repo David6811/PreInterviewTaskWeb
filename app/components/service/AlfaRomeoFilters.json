@@ -6,19 +6,43 @@
     },
     {
       "id": 1,
-      "name": "124"
+      "name": "147"
     },
     {
       "id": 2,
-      "name": "500"
+      "name": "156"
     },
     {
       "id": 3,
-      "name": "595"
+      "name": "159"
     },
     {
       "id": 4,
-      "name": "695"
+      "name": "4C"
+    },
+    {
+      "id": 5,
+      "name": "Giulia"
+    },
+    {
+      "id": 6,
+      "name": "Giulietta"
+    },
+    {
+      "id": 7,
+      "name": "GT"
+    },
+    {
+      "id": 8,
+      "name": "MiTo"
+    },
+    {
+      "id": 9,
+      "name": "Stelvio"
+    },
+    {
+      "id": 10,
+      "name": "Tonale"
     }
   ],
   "AllCarConditions": [

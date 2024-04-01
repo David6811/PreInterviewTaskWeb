@@ -38,3 +38,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 npm install @headlessui/react --save
 
 npm install @heroicons/react --save
+
+PM2
+npm install pm2@latest -g
