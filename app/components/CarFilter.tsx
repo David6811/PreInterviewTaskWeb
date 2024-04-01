@@ -42,6 +42,10 @@ export default function CarFilter({
     };
     const Makes = [
         {
+            id: 0,
+            name: 'Make',
+        },
+        {
             id: 1,
             name: 'Abarth',
         },

@@ -35,7 +35,7 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
   const handleOnChangeClick = (newValue: Factors) => {
     setSelected(newValue);
     setValue(newValue);
-    if (jsonData[0].name == 'Abarth') {
+    if (jsonData[0].name == 'Make') {
       setFilters(AudiFilters);
       setModelValue(newValue.name);
 
@@ -50,6 +50,8 @@ export default function CarSelector({ jsonData, defaultWidth, setSelected, trigg
         setFilters(AustinFilters);
       } else if (defaultMake === "bentley") {
         setFilters(BentleyFilters);
+      } else if(defaultMake === "make"){
+
       }
     }
   };
