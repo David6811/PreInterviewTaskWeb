@@ -20,6 +20,10 @@ export default function Home() {
   setDefaultMake(searchParams.get('make') || 'Audi');
   setDefaultModel(searchParams.get('model') || 'A5');
 
+  useEffect(() => {
+    document.title = `${searchParams.get('make') || 'Audi'} ${searchParams.get('model') || 'A5'} | How Much They Sold For in Australia`;
+  }, []);
+
   const [make, setMake] = useFactorsState({ "id": 0, "name": searchParams.get('make') || 'Audi' });
   const [model, setModel] = useFactorsState({ "id": 0, "name": searchParams.get('model') || 'A5' });
   const [year, setYear] = useFactorsState({ "id": 0, "name": '' });
