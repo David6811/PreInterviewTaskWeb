@@ -89,3 +89,13 @@ export interface FactorsProps {
     setVisibleCount: React.Dispatch<React.SetStateAction<number>>;
 }
 
+export function formatAge(averageAge:number) {
+    const years = Math.floor(averageAge);
+    const months = Math.round((averageAge - years) * 12);
+    const yearsString = years > 1 ? years + 'yrs' : years + 'yr';
+    const monthsString = months > 1 ? months + 'mos' : months + 'mo';
+    return `Average age: ${yearsString} ${monthsString}`;
+}
+
+
+

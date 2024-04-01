@@ -8,8 +8,7 @@ import AlfaRomeoFilters from './service/AlfaRomeoFilters.json';
 import AudiFilters from './service/AudiFilters.json';
 import AustinFilters from './service/AustinFilters.json';
 import BentleyFilters from './service/BentleyFilters.json';
-import { Factors, FactorsProps, CarData, getDefaultMake, getDefaultModel, setDefaultModel } from '../types/interfaces';
-
+import { formatAge, FactorsProps, CarData, getDefaultMake, getDefaultModel, setDefaultModel } from '../types/interfaces';
 
 export default function CarFilter({
     setMake,
@@ -39,6 +38,7 @@ export default function CarFilter({
     setVisibleCount }: FactorsProps) {
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setInputValue(event.target.value);
         setDescription(event.target.value);
     };
     const Makes = [
@@ -68,13 +68,13 @@ export default function CarFilter({
         },
     ]
 
+    const [inputValue, setInputValue] = useState('');
+
     const [showMoreFilters, setShowMoreFilters] = useState(false); // State to track whether to show more filters
     const [triggerDefault, setTriggerDefault] = useState(0); // State to track whether to show more filters
     const [recordCount, setRecordCount] = useState<number>(0);
     const [averageKM, setAverageKM] = useState<string>("0");
-    const [averageAge, setAverageAge] = useState<number>(0);
-
-
+    const [averageAge, setAverageAge] = useState<string>("0");
 
     const ascButtonRef = useRef<HTMLButtonElement>(null);
     const descButtonRef = useRef<HTMLButtonElement>(null);
@@ -102,8 +102,10 @@ export default function CarFilter({
     const handleClearClick = () => {
         setMake({ id: 0, name: "Make" });
         setModel({ id: 0, name: "Family" });
+        setDescription("");
+        setInputValue("");
         setRecordCount(0);
-        setAverageAge(0);
+        setAverageAge("0");
         setAverageKM("0");
         setApply(Math.random);
         setTriggerDefault(Math.random);
@@ -131,7 +133,8 @@ export default function CarFilter({
                     return accumulator + age;
                 }, 0);
                 const averageAgeByYear = totalAgeByYear / carDataLength;
-                setAverageAge(averageAgeByYear);
+                setAverageAge(formatAge(averageAgeByYear));
+
             }
         } else {
             //console.error("No Record");
@@ -227,7 +230,7 @@ export default function CarFilter({
                         </div>
 
                         <div className="ml-2">
-                            <input className="descriptionInput" style={{ width: 420 }} onChange={handleInputChange} placeholder="e.g. Metallic Paint, Power front seats, Power Sunrroof, ..." />
+                            <input className="descriptionInput" value={inputValue} style={{ width: 420 }} onChange={handleInputChange} placeholder="e.g. Metallic Paint, Power front seats, Power Sunrroof, ..." />
                         </div>
 
                     </div>
@@ -247,7 +250,6 @@ export default function CarFilter({
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div >
@@ -255,7 +257,7 @@ export default function CarFilter({
                     <div className='mt-3 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5 '>
                         <div className='whitespace-nowrap'>Records: <strong>{recordCount}</strong></div>
                         <div className='whitespace-nowrap'>Average KM:  <strong>{averageKM}</strong></div>
-                        <div className='whitespace-nowrap'>Average age: <strong>{averageAge}yrs</strong> </div>
+                        <div className='whitespace-nowrap'>Average age: <strong>{averageAge}</strong> </div>
                     </div>
 
                     <div className='flex justify-center sm:justify-end'>
@@ -270,7 +272,6 @@ export default function CarFilter({
 
                 </div>
             </div>
-
         </div>
     );
 }

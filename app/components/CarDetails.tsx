@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import TableNormal from './TableNormal';
 import TableInfo from './TableInfo';
 import TableList from './TableList';
-import { CarData, CarDetailsProps } from '../types/interfaces';
+import { CarDetailsProps } from '../types/interfaces';
 import Loading from './LoadingSpinner';
 
 export default function CarDetails({ carData }: CarDetailsProps) {
@@ -25,12 +25,6 @@ export default function CarDetails({ carData }: CarDetailsProps) {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
-
-    // useEffect(() => {
-    //     console.log("Used car sales data in CarDetails");
-    // }, [carData]);
-
-
 
     const renderComponent = () => {
         switch (activeComponent) {

@@ -2,7 +2,7 @@ import './Banner.css'; // Import the CSS file
 import CarFilter from './CarFilter';
 import Menu from './Menu';
 import UsedCarTitle from './UsedCarTitle';
-import { Factors, FactorsProps } from '../types/interfaces';
+import {FactorsProps } from '../types/interfaces';
 
 export default function Banner({
   setMake,

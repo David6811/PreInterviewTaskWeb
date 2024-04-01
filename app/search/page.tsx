@@ -23,11 +23,9 @@ export default function Home() {
 
   const [visibleCount, setVisibleCount] = useState(3);
 
-  // 在 LoadMore 组件点击时，增加显示数据的数量
   const handleLoadMore = () => {
-    setVisibleCount(prevCount => prevCount + 3); // 每次增加3个
+    setVisibleCount(prevCount => prevCount + 3);
   };
-
 
   const [make, setMake] = useFactorsState({ "id": 0, "name": searchParams.get('make') || 'Audi' });
   const [model, setModel] = useFactorsState({ "id": 0, "name": searchParams.get('model') || 'A5' });
@@ -52,7 +50,7 @@ export default function Home() {
   const [sort, setSort] = useFactorsState({ "id": 0, "name": 'Sort by Sale Date' });
   const [asc, setAsc] = useState('DESC');
 
-  const [carData, setCarData] = useState([]); // 将初始状态值设为空数组
+  const [carData, setCarData] = useState([]);
   const [apply, setApply] = useState(0);
 
   useEffect(() => {
@@ -139,11 +137,11 @@ export default function Home() {
         setAsc={setAsc}
         carData={carData}
         setApply={setApply}
-        setVisibleCount = {setVisibleCount}
+        setVisibleCount={setVisibleCount}
       />
-      <CarDetails carData={carData?.slice(0, visibleCount)} /> 
+      <CarDetails carData={carData?.slice(0, visibleCount)} />
 
-      {isVisible && <LoadMore onLoadMore={handleLoadMore}/>}
+      {isVisible && <LoadMore onLoadMore={handleLoadMore} />}
       <Estimate />
       <Foot />
     </div>
