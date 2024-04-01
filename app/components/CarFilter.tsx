@@ -38,6 +38,7 @@ export default function CarFilter({
     setVisibleCount }: FactorsProps) {
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setInputValue(event.target.value);
         setDescription(event.target.value);
     };
     const Makes = [
@@ -66,6 +67,8 @@ export default function CarFilter({
             name: 'Bentley',
         },
     ]
+
+    const [inputValue, setInputValue] = useState('');
 
     const [showMoreFilters, setShowMoreFilters] = useState(false); // State to track whether to show more filters
     const [triggerDefault, setTriggerDefault] = useState(0); // State to track whether to show more filters
@@ -99,6 +102,8 @@ export default function CarFilter({
     const handleClearClick = () => {
         setMake({ id: 0, name: "Make" });
         setModel({ id: 0, name: "Family" });
+        setDescription("");
+        setInputValue("");
         setRecordCount(0);
         setAverageAge(0);
         setAverageKM("0");
@@ -224,7 +229,7 @@ export default function CarFilter({
                         </div>
 
                         <div className="ml-2">
-                            <input className="descriptionInput" style={{ width: 420 }} onChange={handleInputChange} placeholder="e.g. Metallic Paint, Power front seats, Power Sunrroof, ..." />
+                            <input className="descriptionInput" value={inputValue} style={{ width: 420 }} onChange={handleInputChange} placeholder="e.g. Metallic Paint, Power front seats, Power Sunrroof, ..." />
                         </div>
 
                     </div>
