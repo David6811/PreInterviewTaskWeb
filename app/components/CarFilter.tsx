@@ -109,6 +109,26 @@ export default function CarFilter({
         setAverageKM("0");
         setApply(Math.random);
         setTriggerDefault(Math.random);
+
+        setYear({ "id": 0, "name": '' });
+        setOdometer({ "id": 0, "name": '' });
+        setVehicleCondition({ "id": 0, "name": '' });
+        setStates({ "id": 0, "name": '' });
+        setCustomDate({ "id": 0, "name": '' });
+        setSaleCategory({ "id": 0, "name": '' });
+        setBadges({ "id": 0, "name": '' });
+        setBodyType({ "id": 0, "name": '' });
+        setBodyTypeConfig({ "id": 0, "name": '' });
+        setFuelType({ "id": 0, "name": '' });
+        setTransmission({ "id": 0, "name": '' });
+        setEngine({ "id": 0, "name": '' });
+        setCylinders({ "id": 0, "name": '' });
+        setDivision({ "id": 0, "name": '' });
+        setDrive({ "id": 0, "name": '' });
+        setSeat({ "id": 0, "name": '' });
+        setDoors({ "id": 0, "name": '' });
+        setSort({ "id": 0, "name": 'Sort by Sale Date' });
+        setAsc('DESC');
     };
 
     const handleApplyClick = () => {
