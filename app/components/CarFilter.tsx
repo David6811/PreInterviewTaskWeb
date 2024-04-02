@@ -250,7 +250,7 @@ export default function CarFilter({
                         </div>
 
                         <div className="ml-2">
-                            <input className="descriptionInput" value={inputValue} style={{ width: 420 }} onChange={handleInputChange} placeholder="e.g. Metallic Paint, Power front seats, Power Sunrroof, ..." />
+                            <input className="flex  descriptionInput descriptionInput560" value={inputValue}  onChange={handleInputChange} placeholder="e.g. Metallic Paint, Power front seats, Power Sunrroof, ..." />
                         </div>
 
                     </div>
