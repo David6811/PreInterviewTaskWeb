@@ -97,6 +97,10 @@
         display: flex;
         justify-content: center;
     }
+
+    .descriptionInput560{
+        width: 340px;
+    }
 }
 
 

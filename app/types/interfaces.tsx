@@ -94,7 +94,7 @@ export function formatAge(averageAge:number) {
     const months = Math.round((averageAge - years) * 12);
     const yearsString = years > 1 ? years + 'yrs' : years + 'yr';
     const monthsString = months > 1 ? months + 'mos' : months + 'mo';
-    return `Average age: ${yearsString} ${monthsString}`;
+    return `${yearsString} ${monthsString}`;
 }
 
 
