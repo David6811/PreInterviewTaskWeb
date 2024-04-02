@@ -249,8 +249,8 @@ export default function CarFilter({
                             <CarSelector jsonData={filters.Doors} defaultWidth={108} setSelected={setDoors} triggerDefault={triggerDefault} defaultValue="" setFilters={setFilters} modelValue={modelValue} setModelValue={setModelValue} />
                         </div>
 
-                        <div className="ml-2">
-                            <input className="flex  descriptionInput descriptionInput560" value={inputValue}  onChange={handleInputChange} placeholder="e.g. Metallic Paint, Power front seats, Power Sunrroof, ..." />
+                        <div className="">
+                            <input className="flex  descriptionInput descriptionInput560" value={inputValue}  onChange={handleInputChange} placeholder="e.g. Metallic Paint, Power front seats, ..." />
                         </div>
 
                     </div>

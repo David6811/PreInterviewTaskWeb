@@ -24,6 +24,9 @@ export default function Home() {
   const [visibleCount, setVisibleCount] = useState(3);
 
   const handleLoadMore = () => {
+    if((carData.length- visibleCount) <(3+1)){
+      setIsVisible(false);
+    }
     setVisibleCount(prevCount => prevCount + 3);
   };
 
@@ -93,7 +96,8 @@ export default function Home() {
         }
         const data = await response.json();
         setCarData(data.data);
-        if (data.data.length >= 3) setIsVisible(true);
+        
+        if (data.data.length >3 ) setIsVisible(true);
       } catch (error) {
         console.error('Error fetching car data:', error);
         setCarData([]);
