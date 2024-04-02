@@ -15,7 +15,7 @@ export default function CarDetails({ carData }: CarDetailsProps) {
             const width = window.innerWidth;
             if (width < 756) {
                 setActiveComponent('list');
-            } else if (width >= 756 && width < 1080) {
+            } else if (width >= 756 && width < 1200) {
                 setActiveComponent('info');
             } else {
                 setActiveComponent('normal');

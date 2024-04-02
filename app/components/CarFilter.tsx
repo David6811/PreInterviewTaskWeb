@@ -250,7 +250,7 @@ export default function CarFilter({
                         </div>
 
                         <div className="">
-                            <input className="flex  descriptionInput descriptionInput560" value={inputValue}  onChange={handleInputChange} placeholder="e.g. Metallic Paint, Power front seats, ..." />
+                            <input className="flex  descriptionInput descriptionInput560 descriptionInput450" value={inputValue}  onChange={handleInputChange} placeholder="e.g. Metallic Paint, Power front seats, ..." />
                         </div>
 
                     </div>
