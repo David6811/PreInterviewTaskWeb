@@ -10,7 +10,7 @@ import { setDefaultMake, setDefaultModel } from '../types/interfaces';
 import { useFactorsState } from '../components/UseFactorsState';
 import Head from 'next/head';
 
-const url_prod = "https://api.helloai.ink/";
+const url_prod = "https://demo.helloai.ink/";
 const url_dev = "http://localhost:8080/";
 
 export default function Home() {
